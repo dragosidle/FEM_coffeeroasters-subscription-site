@@ -1,5 +1,7 @@
-const hamburger = document.getElementById('hamburger');
+const hamburgerBtn = document.getElementById('hamburger');
+const mobileMenu = document.querySelector('.modal-menu');
 
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
+hamburgerBtn.addEventListener('click', () => {
+  hamburgerBtn.classList.toggle('open');
+  mobileMenu.classList.toggle('hidden');
 });

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow&display=swap");
 * {
   box-sizing: border-box;
   padding: 0;
@@ -8,18 +10,24 @@ html {
   font-size: 16px;
 }
 
+body {
+  background-color: #fefcf7;
+}
+
 nav {
+  margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
 }
 nav img {
-  width: 10rem;
+  width: 8rem;
   margin: 0.5rem;
 }
 
 #hamburger {
+  user-select: none;
   height: 1rem;
   width: 1rem;
   position: relative;
@@ -39,7 +47,7 @@ nav img {
   position: absolute;
   height: 4px;
   width: 100%;
-  background: black;
+  background: #343e4c;
   border-radius: 2px;
   opacity: 1;
   left: 0;
@@ -78,10 +86,11 @@ nav img {
 }
 
 #hamburger.open span:nth-child(1) {
-  -webkit-transform: rotate(49deg);
-  -moz-transform: rotate(49deg);
-  -o-transform: rotate(49deg);
-  transform: rotate(49deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  width: 106%;
   top: 0;
   left: 0;
 }
@@ -92,12 +101,256 @@ nav img {
 }
 
 #hamburger.open span:nth-child(3) {
-  -webkit-transform: rotate(-49deg);
-  -moz-transform: rotate(-49deg);
-  -o-transform: rotate(-49deg);
-  transform: rotate(-49deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  width: 106%;
   bottom: 0;
   left: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-menu {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 1rem 0;
+  font-family: "Fraunces", sans-serif;
+  background: #fefcf7;
+  background: -moz-linear-gradient(180deg, #fefcf7 25%, rgba(254, 247, 247, 0) 100%);
+  background: -webkit-linear-gradient(180deg, #fefcf7 25%, rgba(254, 247, 247, 0) 100%);
+  background: linear-gradient(180deg, #fefcf7 25%, rgba(254, 247, 247, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fefcf7",endColorstr="#fef7f7",GradientType=1);
+  text-align: center;
+}
+.modal-menu li {
+  color: #343e4c;
+  font-size: 1.2rem;
+  list-style: none;
+  margin-bottom: 1rem;
+  user-select: none;
+}
+.modal-menu li a {
+  text-decoration: none;
+  color: #343e4c;
+}
+.modal-menu li a:hover {
+  cursor: pointer;
+  color: #0e8684;
+}
+
+.card {
+  margin: auto;
+  border-radius: 10px;
+}
+.card h1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin: 1rem 0;
+  color: #fefcf7;
+  font-family: "Fraunces", sans-serif;
+  text-align: center;
+}
+.card p {
+  font-size: 15px;
+  line-height: 25px;
+  text-align: center;
+  color: #fefcf7;
+  font-family: "Barlow", sans-serif;
+}
+.card button {
+  user-select: none;
+  display: flex;
+  color: #fefcf7;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  font-family: "Fraunces", sans-serif;
+  margin: 1rem auto;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background-color: #0e8684;
+}
+.card button:hover {
+  cursor: pointer;
+  background-color: #66d2cf;
+}
+.card--great--coffee {
+  padding: 4rem 1.5rem;
+  width: 90%;
+  background-image: url("../assets/home/mobile/image-hero-coffeepress.jpg");
+  background-size: cover;
+}
+.card--choose--us {
+  padding: 4rem 1.5rem;
+  max-height: 60rem;
+  width: 90%;
+  background-color: #293039;
+}
+.card--choose--us p {
+  margin-bottom: 4rem;
+}
+.card--option {
+  padding: 1rem 0;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #0e8684;
+}
+.card--option img {
+  margin: 3.5rem auto;
+  width: 5rem;
+}
+.card--option p {
+  margin: 1rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.card--how {
+  width: 100%;
+  position: relative;
+  margin: 3rem 0;
+  background: #fefcf6;
+}
+.card--how h2 {
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: #293039;
+  font-family: "Fraunces", sans-serif;
+  text-align: center;
+}
+.card--how h1 {
+  font-size: 4rem;
+  line-height: 6rem;
+  margin: 2rem auto 0 auto;
+  color: #fdd6ba;
+  font-family: "Fraunces", sans-serif;
+  text-align: center;
+}
+.card--how p {
+  margin: 2rem auto;
+  font-size: 1rem;
+  line-height: 1.8rem;
+  color: #293039;
+}
+.card--fake {
+  margin-top: 45rem;
+  width: 90%;
+  position: relative;
+}
+.card--fake h3 {
+  color: #83888f;
+  text-align: center;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  font-family: "Fraunces", sans-serif;
+  margin: 5rem 0;
+}
+
+.collection {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 5rem auto;
+}
+.collection__title {
+  position: relative;
+  margin: 1rem auto;
+}
+.collection__title h1 {
+  font-size: 40px;
+  color: #848990;
+  font-family: "Fraunces", sans-serif;
+}
+.collection__title .title-gradient {
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fefcf7;
+  background: -moz-linear-gradient(0deg, rgba(254, 252, 247, 0.8044818269) 25%, rgba(254, 247, 247, 0) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(254, 252, 247, 0.8044818269) 25%, rgba(254, 247, 247, 0) 100%);
+  background: linear-gradient(0deg, rgba(254, 252, 247, 0.8044818269) 25%, rgba(254, 247, 247, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fefcf7",endColorstr="#fef7f7",GradientType=1);
+}
+
+.products {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.coffee {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.coffee .product-image {
+  margin: 0 auto;
+}
+.coffee .product-image img {
+  width: 15rem;
+}
+.coffee h1 {
+  margin: 1rem 0;
+  font-family: "Fraunces", sans-serif;
+  text-align: center;
+}
+.coffee p {
+  font-family: "Barlow", sans-serif;
+  text-align: center;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+footer {
+  margin-top: 8rem;
+  font-family: "Barlow", sans-serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #2c343e;
+  padding: 3rem 0;
+  color: #fefcf7;
+}
+footer img {
+  margin: 1rem auto;
+  width: 75%;
+}
+footer ul {
+  margin: auto;
+}
+footer li {
+  user-select: none;
+  text-transform: uppercase;
+  color: #83888f;
+  list-style: none;
+  text-align: center;
+  margin: 1rem 0;
+}
+footer li:hover {
+  cursor: pointer;
+  color: #fefcf7;
+}
+
+.socials {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem auto;
+}
+.socials img {
+  width: 1.5rem;
+  margin: 2rem auto;
+}
+.socials img:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
