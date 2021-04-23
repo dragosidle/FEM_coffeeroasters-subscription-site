@@ -95,7 +95,12 @@ nav {
 }
 
 .hidden {
-  display: none;
+  pointer-events: none;
+  opacity: 0 !important;
+  ul {
+    opacity: 0 !important;
+    transform: translate(0px, -25px) !important;
+  }
 }
 
 .modal-menu {
@@ -103,6 +108,8 @@ nav {
   height: 100%;
   width: 100%;
   padding: 1rem 0;
+  opacity: 1;
+  transition: opacity 300ms ease-in;
   font-family: 'Fraunces', sans-serif;
   background: rgb(254, 252, 247);
   background: -moz-linear-gradient(
@@ -122,6 +129,12 @@ nav {
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fefcf7",endColorstr="#fef7f7",GradientType=1);
   text-align: center;
+
+  ul {
+    opacity: 1;
+    transform: translate(0px, 0px);
+    transition: opacity 200ms ease-out 200ms, transform 500ms ease-out;
+  }
 
   li {
     color: hsl(215, 19%, 25%);
