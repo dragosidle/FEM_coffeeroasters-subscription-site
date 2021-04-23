@@ -28,8 +28,8 @@ nav img {
 
 #hamburger {
   user-select: none;
-  height: 1rem;
-  width: 1rem;
+  height: 16px;
+  width: 16px;
   position: relative;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -145,19 +145,19 @@ nav img {
 
 .card {
   margin: auto;
-  border-radius: 10px;
+  border-radius: 0.8rem;
 }
 .card h1 {
   font-size: 1.5rem;
   line-height: 2rem;
-  margin: 1rem 0;
+  margin: 1em 0;
   color: #fefcf7;
   font-family: "Fraunces", sans-serif;
   text-align: center;
 }
 .card p {
-  font-size: 15px;
-  line-height: 25px;
+  font-size: 1rem;
+  line-height: 1.5rem;
   text-align: center;
   color: #fefcf7;
   font-family: "Barlow", sans-serif;
@@ -166,10 +166,10 @@ nav img {
   user-select: none;
   display: flex;
   color: #fefcf7;
-  padding: 1rem 2rem;
-  border-radius: 6px;
+  padding: 1em 2em;
+  border-radius: 0.5rem;
   font-family: "Fraunces", sans-serif;
-  margin: 1rem auto;
+  margin: 3em auto 1em auto;
   border: none;
   outline: none;
   font-size: 1rem;
@@ -180,41 +180,41 @@ nav img {
   background-color: #66d2cf;
 }
 .card--great--coffee {
-  padding: 4rem 1.5rem;
+  padding: 4em 1.5em;
   width: 90%;
   background-image: url("../assets/home/mobile/image-hero-coffeepress.jpg");
   background-size: cover;
 }
 .card--choose--us {
-  padding: 4rem 1.5rem;
+  padding: 4em 1.5em;
   max-height: 60rem;
   width: 90%;
   background-color: #293039;
 }
 .card--choose--us p {
-  margin-bottom: 4rem;
+  margin-bottom: 4em;
 }
 .card--option {
-  padding: 1rem 0;
-  margin: 1.5rem 0;
+  padding: 1em 0;
+  margin: 1.5em 0;
   display: flex;
   flex-direction: column;
   width: 100%;
   background-color: #0e8684;
 }
 .card--option img {
-  margin: 3.5rem auto;
-  width: 5rem;
+  margin: 2.5em auto;
+  width: 5em;
 }
 .card--option p {
-  margin: 1rem;
+  margin: 1em;
   font-size: 1rem;
   line-height: 1.5rem;
 }
 .card--how {
   width: 100%;
   position: relative;
-  margin: 3rem 0;
+  margin: 3em 0;
   background: #fefcf6;
 }
 .card--how h2 {
@@ -227,19 +227,19 @@ nav img {
 .card--how h1 {
   font-size: 4rem;
   line-height: 6rem;
-  margin: 2rem auto 0 auto;
+  margin: 2em auto 0 auto;
   color: #fdd6ba;
   font-family: "Fraunces", sans-serif;
   text-align: center;
 }
 .card--how p {
-  margin: 2rem auto;
+  margin: 2em auto;
   font-size: 1rem;
   line-height: 1.8rem;
   color: #293039;
 }
 .card--fake {
-  margin-top: 45rem;
+  margin-top: 45em;
   width: 90%;
   position: relative;
 }
@@ -249,21 +249,21 @@ nav img {
   line-height: 2rem;
   font-size: 1.5rem;
   font-family: "Fraunces", sans-serif;
-  margin: 5rem 0;
+  margin: 5em 0;
 }
 
 .collection {
   display: flex;
   flex-direction: column;
   width: 90%;
-  margin: 5rem auto;
+  margin: 5em auto;
 }
 .collection__title {
   position: relative;
-  margin: 1rem auto;
+  margin: 1em auto;
 }
 .collection__title h1 {
-  font-size: 40px;
+  font-size: 2.4rem;
   color: #848990;
   font-family: "Fraunces", sans-serif;
 }
@@ -286,42 +286,43 @@ nav img {
 }
 
 .coffee {
-  margin: 2rem auto;
+  margin: 2em auto;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 .coffee .product-image {
-  margin: 0 auto;
+  margin: auto;
 }
 .coffee .product-image img {
   width: 15rem;
 }
 .coffee h1 {
-  margin: 1rem 0;
+  margin: 1em 0;
   font-family: "Fraunces", sans-serif;
   text-align: center;
 }
 .coffee p {
   font-family: "Barlow", sans-serif;
   text-align: center;
-  font-size: 15px;
-  line-height: 25px;
+  font-size: 1rem;
+  line-height: 1.4rem;
 }
 
 footer {
-  margin-top: 8rem;
+  margin-top: 8em;
   font-family: "Barlow", sans-serif;
   display: flex;
   justify-content: center;
   flex-direction: column;
   background: #2c343e;
-  padding: 3rem 0;
+  padding: 3em 0;
   color: #fefcf7;
 }
 footer img {
-  margin: 1rem auto;
-  width: 75%;
+  margin: 1em auto;
+  width: 12rem;
+  max-width: 60%;
 }
 footer ul {
   margin: auto;
@@ -351,6 +352,12 @@ footer li:hover {
 }
 .socials img:hover {
   cursor: pointer;
+}
+
+@media (min-width: 400px) {
+  html {
+    font-size: 20px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

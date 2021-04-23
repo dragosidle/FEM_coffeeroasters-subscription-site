@@ -28,19 +28,19 @@ body {
 
 .card {
   margin: auto;
-  border-radius: 10px;
+  border-radius: 0.8rem;
   h1 {
     font-size: 1.5rem;
     line-height: 2rem;
-    margin: 1rem 0;
+    margin: 1em 0;
     color: #fefcf7;
     font-family: 'Fraunces', sans-serif;
     text-align: center;
   }
 
   p {
-    font-size: 15px;
-    line-height: 25px;
+    font-size: 1rem;
+    line-height: 1.5rem;
     text-align: center;
     color: #fefcf7;
     font-family: 'Barlow', sans-serif;
@@ -50,10 +50,10 @@ body {
     user-select: none;
     display: flex;
     color: #fefcf7;
-    padding: 1rem 2rem;
-    border-radius: 6px;
+    padding: 1em 2em;
+    border-radius: 0.5rem;
     font-family: 'Fraunces', sans-serif;
-    margin: 1rem auto;
+    margin: 3em auto 1em auto;
     border: none;
     outline: none;
     font-size: 1rem;
@@ -64,33 +64,33 @@ body {
     }
   }
   &--great--coffee {
-    padding: 4rem 1.5rem;
+    padding: 4em 1.5em;
     width: 90%;
     background-image: url('../assets/home/mobile/image-hero-coffeepress.jpg');
     background-size: cover;
   }
   &--choose--us {
-    padding: 4rem 1.5rem;
+    padding: 4em 1.5em;
     max-height: 60rem; // for the overflow effect
     width: 90%;
     background-color: #293039;
     p {
-      margin-bottom: 4rem;
+      margin-bottom: 4em;
     }
   }
   &--option {
-    padding: 1rem 0;
-    margin: 1.5rem 0;
+    padding: 1em 0;
+    margin: 1.5em 0;
     display: flex;
     flex-direction: column;
     width: 100%;
     background-color: hsl(179, 81%, 29%);
     img {
-      margin: 3.5rem auto;
-      width: 5rem;
+      margin: 2.5em auto;
+      width: 5em;
     }
     p {
-      margin: 1rem;
+      margin: 1em;
       font-size: 1rem;
       line-height: 1.5rem;
     }
@@ -98,7 +98,7 @@ body {
   &--how {
     width: 100%;
     position: relative;
-    margin: 3rem 0;
+    margin: 3em 0;
     background: hsl(43, 78%, 98%);
     h2 {
       font-size: 1.6rem;
@@ -110,13 +110,13 @@ body {
     h1 {
       font-size: 4rem;
       line-height: 6rem;
-      margin: 2rem auto 0 auto;
+      margin: 2em auto 0 auto;
       color: hsl(25, 94%, 86%);
       font-family: 'Fraunces', sans-serif;
       text-align: center;
     }
     p {
-      margin: 2rem auto;
+      margin: 2em auto;
       font-size: 1rem;
       line-height: 1.8rem;
       color: #293039;
@@ -124,7 +124,7 @@ body {
   }
 
   &--fake {
-    margin-top: 45rem; // for the overflow effect
+    margin-top: 45em; // for the overflow effect
     width: 90%;
     position: relative;
     h3 {
@@ -133,7 +133,7 @@ body {
       line-height: 2rem;
       font-size: 1.5rem;
       font-family: 'Fraunces', sans-serif;
-      margin: 5rem 0;
+      margin: 5em 0;
     }
   }
 }
@@ -142,12 +142,12 @@ body {
   display: flex;
   flex-direction: column;
   width: 90%;
-  margin: 5rem auto;
+  margin: 5em auto;
   &__title {
     position: relative;
-    margin: 1rem auto;
+    margin: 1em auto;
     h1 {
-      font-size: 40px;
+      font-size: 2.4rem;
       color: hsl(215, 5%, 54%);
       font-family: 'Fraunces', sans-serif;
     }
@@ -184,41 +184,42 @@ body {
 }
 
 .coffee {
-  margin: 2rem auto;
+  margin: 2em auto;
   display: flex;
   justify-content: center;
   flex-direction: column;
   .product-image {
-    margin: 0 auto;
+    margin: auto;
     img {
       width: 15rem;
     }
   }
   h1 {
-    margin: 1rem 0;
+    margin: 1em 0;
     font-family: 'Fraunces', sans-serif;
     text-align: center;
   }
   p {
     font-family: 'Barlow', sans-serif;
     text-align: center;
-    font-size: 15px;
-    line-height: 25px;
+    font-size: 1rem;
+    line-height: 1.4rem;
   }
 }
 
 footer {
-  margin-top: 8rem;
+  margin-top: 8em;
   font-family: 'Barlow', sans-serif;
   display: flex;
   justify-content: center;
   flex-direction: column;
   background: #2c343e;
-  padding: 3rem 0;
+  padding: 3em 0;
   color: #fefcf7;
   img {
-    margin: 1rem auto;
-    width: 75%;
+    margin: 1em auto;
+    width: 12rem;
+    max-width: 60%;
   }
   ul {
     margin: auto;
@@ -248,5 +249,11 @@ footer {
     &:hover {
       cursor: pointer;
     }
+  }
+}
+
+@media (min-width: 400px) {
+  html {
+    font-size: 20px;
   }
 }
