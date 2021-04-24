@@ -160,7 +160,7 @@ nav img {
   border-radius: 0.8rem;
 }
 .card h1 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   line-height: 2rem;
   margin: 1em 0;
   color: #fefcf7;
@@ -169,7 +169,7 @@ nav img {
 }
 .card p {
   font-size: 1rem;
-  line-height: 1.5rem;
+  line-height: 1.5;
   text-align: center;
   color: #fefcf7;
   font-family: "Barlow", sans-serif;
@@ -263,6 +263,70 @@ nav img {
   font-family: "Fraunces", sans-serif;
   margin: 5em 0;
 }
+.card--about {
+  background-image: url("../assets/about/mobile/image-hero-whitecup.jpg");
+  background-size: cover;
+  background-repeat: none;
+  padding: 4em 1.5em;
+  width: 90%;
+}
+.card--commitment {
+  width: 90%;
+  padding: 4em 1.5em;
+  background-image: url("../assets/about/mobile/image-commitment.jpg");
+  background-size: cover;
+  background-repeat: none;
+  min-height: 25rem;
+  margin: 4em auto;
+}
+
+.quality {
+  margin: 10em auto;
+  padding: 6em 1.5em 4em 1.5em;
+  position: relative;
+  width: 90%;
+  background-image: url("../assets/about/mobile/bg-quality.png");
+  background-size: cover;
+  background-repeat: none;
+}
+.quality h1 {
+  margin-left: -5px;
+}
+
+.quality-img {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  margin: 0 auto;
+  height: 10rem;
+  width: 90%;
+  border-radius: 0.8rem;
+  background-image: url("../assets/about/mobile/image-quality.jpg");
+  background-size: cover;
+  background-repeat: none;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.commitment {
+  width: 100%;
+}
+.commitment h1 {
+  text-align: center;
+  margin: 1rem auto;
+  width: 90%;
+  color: #333d4b;
+  font-family: "Fraunces", sans-serif;
+  font-size: 1.8rem;
+}
+.commitment p {
+  margin: 2rem auto 1rem auto;
+  text-align: center;
+  line-height: 1.5;
+  width: 90%;
+  font-family: "Barlow", sans-serif;
+  color: #333d4b;
+}
 
 .collection {
   display: flex;
@@ -310,15 +374,52 @@ nav img {
   width: 15rem;
 }
 .coffee h1 {
+  color: #333d4b;
   margin: 1em 0;
   font-family: "Fraunces", sans-serif;
   text-align: center;
 }
 .coffee p {
+  color: #333d4b;
   font-family: "Barlow", sans-serif;
   text-align: center;
   font-size: 1rem;
   line-height: 1.4rem;
+}
+
+.headquarters {
+  margin: 1rem auto;
+  width: 90%;
+}
+.headquarters h2 {
+  margin: 2em auto;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #848990;
+  font-family: "Fraunces", sans-serif;
+}
+
+.country {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem auto;
+  color: #333d4b;
+}
+.country img {
+  margin: 3rem auto;
+}
+.country h1 {
+  text-align: center;
+  font-family: "Fraunces", sans-serif;
+}
+.country ul {
+  font-family: "Barlow", sans-serif;
+  list-style: none;
+  text-align: center;
+}
+.country ul li {
+  margin: 1rem 0;
 }
 
 footer {
