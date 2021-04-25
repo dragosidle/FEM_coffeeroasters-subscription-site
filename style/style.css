@@ -140,7 +140,7 @@ nav img {
   transition: opacity 200ms ease-out 200ms, transform 500ms ease-out;
 }
 .modal-menu li {
-  color: #343e4c;
+  color: #848990;
   font-size: 1.2rem;
   list-style: none;
   margin-bottom: 1rem;
@@ -186,6 +186,7 @@ nav img {
   outline: none;
   font-size: 1rem;
   background-color: #0e8684;
+  transition: 100ms background-color;
 }
 .card button:hover {
   cursor: pointer;
@@ -279,6 +280,60 @@ nav img {
   min-height: 25rem;
   margin: 4em auto;
 }
+.card--plan {
+  width: 90%;
+  padding: 4em 1.5em;
+  background-image: url("../assets/plan/mobile/image-hero-blackcup.jpg");
+  background-size: cover;
+  background-repeat: none;
+  min-height: 25rem;
+  margin: 4em auto;
+}
+.card--plan h1 {
+  font-size: 2.2rem !important;
+}
+
+.all-steps {
+  margin: 6em auto;
+  padding: 1em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url("../assets/plan/mobile/bg-steps.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 0.8em;
+}
+
+.step {
+  width: 100%;
+  position: relative;
+  margin: 1em 0;
+}
+.step h2 {
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: #fefcf7;
+  font-family: "Fraunces", sans-serif;
+  text-align: center;
+}
+.step h1 {
+  font-size: 4rem;
+  line-height: 6rem;
+  margin: 0 auto;
+  color: #fdd6ba;
+  font-family: "Fraunces", sans-serif;
+  text-align: center;
+}
+.step p {
+  text-align: center;
+  font-family: "Barlow", sans-serif;
+  margin: 2em auto 0 auto;
+  font-size: 1rem;
+  line-height: 1.8rem;
+  color: #fefcf7;
+}
 
 .quality {
   margin: 10em auto;
@@ -290,6 +345,7 @@ nav img {
   background-repeat: none;
 }
 .quality h1 {
+  color: #fefcf7;
   margin-left: -5px;
 }
 
@@ -353,6 +409,65 @@ nav img {
   background: -webkit-linear-gradient(0deg, rgba(254, 252, 247, 0.8044818269) 25%, rgba(254, 247, 247, 0) 100%);
   background: linear-gradient(0deg, rgba(254, 252, 247, 0.8044818269) 25%, rgba(254, 247, 247, 0) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fefcf7",endColorstr="#fef7f7",GradientType=1);
+}
+
+.choice {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 1em auto;
+}
+.choice .question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.choice .question:hover {
+  cursor: pointer;
+}
+.choice .question h1 {
+  flex: 3;
+  font-family: "Fraunces", sans-serif;
+  color: #83888f;
+  transition: 100ms color;
+  font-size: 1.6rem;
+}
+.choice .question h1:hover {
+  color: #9398a0;
+}
+.choice .question .arrow-wrap {
+  display: flex;
+  flex: 0.5;
+}
+.choice .question .arrow-wrap img {
+  margin: 0 auto;
+}
+.choice .answers {
+  margin: 1em auto;
+  display: flex;
+  flex-direction: column;
+}
+.choice .answer {
+  background-color: #f4f1eb;
+  transition: 100ms background;
+  border-radius: 0.5rem;
+  margin: 0.5em auto;
+  padding: 1.2em;
+}
+.choice .answer:hover {
+  background-color: #fdd6ba;
+  cursor: pointer;
+}
+.choice .answer h3 {
+  font-family: "Fraunces", sans-serif;
+  font-size: 1.3rem;
+  color: #333d4b;
+}
+.choice .answer p {
+  margin: 0.5em auto;
+  line-height: 1.5;
+  font-family: "Barlow", sans-serif;
+  color: #333d4b;
 }
 
 .products {
@@ -423,7 +538,8 @@ nav img {
 }
 
 footer {
-  margin-top: 8em;
+  width: 95%;
+  margin: 8em auto 1em auto;
   font-family: "Barlow", sans-serif;
   display: flex;
   justify-content: center;
@@ -443,12 +559,15 @@ footer ul {
 footer li {
   user-select: none;
   text-transform: uppercase;
-  color: #83888f;
   list-style: none;
   text-align: center;
   margin: 1rem 0;
 }
-footer li:hover {
+footer a {
+  text-decoration: none;
+  color: #83888f;
+}
+footer a:hover {
   cursor: pointer;
   color: #fefcf7;
 }
@@ -467,7 +586,117 @@ footer li:hover {
   cursor: pointer;
 }
 
-@media (min-width: 400px) {
+.order-overview button {
+  user-select: none;
+  display: flex;
+  color: #fefcf7;
+  padding: 1em 2em;
+  border-radius: 0.5rem;
+  font-family: "Fraunces", sans-serif;
+  margin: 3em auto 1em auto;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background-color: #0e8684;
+  transition: 100ms background-color;
+}
+.order-overview button:hover {
+  cursor: pointer;
+  background-color: #66d2cf;
+}
+
+.order-preview {
+  width: 90%;
+  background-color: #293039;
+  padding: 1.5em;
+}
+.order-preview h3 {
+  font-family: "Barlow", sans-serif;
+  color: #848990;
+  font-size: 1.5rem;
+  font-weight: 100;
+  margin: 0.5em auto;
+}
+.order-preview h4 {
+  font-family: "Fraunces", sans-serif;
+  color: #fefcf7;
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+.order-preview span {
+  color: #0e8684;
+  transition: 100ms color;
+}
+.order-preview span:hover {
+  cursor: pointer;
+  color: #0f9693;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  transform: translate(0, -50%);
+  top: 50%;
+  left: 5%;
+  right: 5%;
+  position: fixed;
+  border-radius: 0.8em;
+  background-color: #fefcf7;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+.modal__title {
+  border-radius: 0.8em 0.8em 0 0;
+  background-color: #2f3844;
+}
+.modal__title h1 {
+  text-align: center;
+  font-family: "Fraunces", sans-serif;
+  color: #fefcf7;
+  font-size: 1.5rem;
+  margin: 1em 0.5em;
+}
+.modal__preview h4 {
+  font-family: "Fraunces", sans-serif;
+  color: #83888f;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin: 0.5em;
+}
+.modal__preview span {
+  color: #0e8684;
+  transition: 100ms color;
+}
+.modal__preview span:hover {
+  cursor: pointer;
+  color: #0f9693;
+}
+.modal p {
+  margin: 0 0.5em;
+  color: #848990;
+  font-family: "Barlow", sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+.modal button {
+  user-select: none;
+  display: flex;
+  color: #fefcf7;
+  padding: 1em 2em;
+  border-radius: 0.5rem;
+  font-family: "Fraunces", sans-serif;
+  margin: 1em auto;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background-color: #0e8684;
+  transition: 100ms background-color;
+}
+.modal button:hover {
+  cursor: pointer;
+  background-color: #66d2cf;
+}
+
+@media (min-width: 481px) {
   html {
     font-size: 20px;
   }
