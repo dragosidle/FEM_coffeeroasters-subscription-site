@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Barlow&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Barlow:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 * {
   box-sizing: border-box;
   padding: 0;
@@ -15,15 +15,38 @@ body {
 }
 
 nav {
+  user-select: none;
+  margin: 1rem auto;
+  width: 90%;
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
 }
 nav img {
   width: 8rem;
   margin: 0.5rem;
+}
+
+#navigation {
+  display: none;
+}
+#navigation li {
+  font-family: "Barlow", sans-serif;
+  margin: 0 0.6rem;
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  display: inline;
+  color: #83888f;
+}
+#navigation a {
+  text-decoration: none;
+  color: #83888f;
+  transition: 100ms color;
+}
+#navigation a:hover {
+  color: #333d4b;
 }
 
 #hamburger {
@@ -198,6 +221,9 @@ nav img {
   background-image: url("../assets/home/mobile/image-hero-coffeepress.jpg");
   background-size: cover;
 }
+.card--great--coffee p {
+  margin: auto;
+}
 .card--choose--us {
   padding: 4em 1.5em;
   max-height: 60rem;
@@ -205,14 +231,15 @@ nav img {
   background-color: #293039;
 }
 .card--choose--us p {
-  margin-bottom: 4em;
+  margin: 0 auto 4em auto;
 }
 .card--option {
-  padding: 1em 0;
-  margin: 1.5em 0;
+  padding: 1em;
+  margin: 1.5em auto;
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: 20rem;
   background-color: #0e8684;
 }
 .card--option img {
@@ -220,7 +247,7 @@ nav img {
   width: 5em;
 }
 .card--option p {
-  margin: 1em;
+  margin: 1em auto;
   font-size: 1rem;
   line-height: 1.5rem;
 }
@@ -264,12 +291,18 @@ nav img {
   font-family: "Fraunces", sans-serif;
   margin: 5em 0;
 }
+.card--fake h2 {
+  margin: auto;
+}
 .card--about {
   background-image: url("../assets/about/mobile/image-hero-whitecup.jpg");
   background-size: cover;
   background-repeat: none;
   padding: 4em 1.5em;
   width: 90%;
+}
+.card--about p {
+  margin: auto;
 }
 .card--commitment {
   width: 90%;
@@ -291,6 +324,9 @@ nav img {
 }
 .card--plan h1 {
   font-size: 2.2rem !important;
+}
+.card--plan p {
+  margin: auto;
 }
 
 .all-steps {
@@ -347,6 +383,9 @@ nav img {
 .quality h1 {
   color: #fefcf7;
   margin-left: -5px;
+}
+.quality p {
+  margin: auto;
 }
 
 .quality-img {
@@ -470,6 +509,11 @@ nav img {
   color: #333d4b;
 }
 
+.disabled {
+  background-color: #e2dedb !important;
+  cursor: not-allowed !important;
+}
+
 .products {
   display: flex;
   justify-content: center;
@@ -500,6 +544,7 @@ nav img {
   text-align: center;
   font-size: 1rem;
   line-height: 1.4rem;
+  max-width: 30ch;
 }
 
 .headquarters {
@@ -586,6 +631,9 @@ footer a:hover {
   cursor: pointer;
 }
 
+.order-overview {
+  padding-top: 50%;
+}
 .order-overview button {
   user-select: none;
   display: flex;
@@ -699,6 +747,31 @@ footer a:hover {
 @media (min-width: 481px) {
   html {
     font-size: 20px;
+  }
+}
+@media (min-width: 711px) {
+  html {
+    font-size: 24px;
+  }
+
+  #hamburger {
+    display: none;
+  }
+
+  #navigation {
+    display: block;
+  }
+
+  .card--great--coffee h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    max-width: 10ch;
+    text-align: left;
+  }
+  .card--great--coffee p {
+    max-width: 22em;
+    margin: 0;
+    text-align: left;
   }
 }
 
