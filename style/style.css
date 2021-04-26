@@ -221,8 +221,14 @@ nav img {
   background-image: url("../assets/home/mobile/image-hero-coffeepress.jpg");
   background-size: cover;
 }
+.card--great--coffee h1 {
+  font-size: clamp(2.2rem, 10vw, 3.6rem);
+  line-height: 1.2;
+  margin: 2rem auto;
+}
 .card--great--coffee p {
-  margin: auto;
+  width: clamp(10ch, 100%, 35ch);
+  margin: 0 auto;
 }
 .card--choose--us {
   padding: 4em 1.5em;
@@ -232,6 +238,7 @@ nav img {
 }
 .card--choose--us p {
   margin: 0 auto 4em auto;
+  max-width: 40ch;
 }
 .card--option {
   padding: 1em;
@@ -273,6 +280,7 @@ nav img {
   text-align: center;
 }
 .card--how p {
+  max-width: 40ch;
   margin: 2em auto;
   font-size: 1rem;
   line-height: 1.8rem;
@@ -327,6 +335,57 @@ nav img {
 }
 .card--plan p {
   margin: auto;
+}
+
+.steps-illustration {
+  display: none;
+  position: relative;
+  width: 70%;
+  height: 2rem;
+}
+.steps-illustration .circle1 {
+  left: 0;
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background-color: white;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #0e8684;
+}
+.steps-illustration .circle2 {
+  transform-origin: 50% 50%;
+  left: 50%;
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background-color: white;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #0e8684;
+}
+.steps-illustration .circle3 {
+  transform-origin: 50% 50%;
+  right: 0;
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background-color: white;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #0e8684;
+}
+.steps-illustration .behind-line {
+  position: absolute;
+  top: 50%;
+  transform-origin: 50% 50%;
+  z-index: -1;
+  width: 100%;
+  height: 3px;
+  background-color: #fdd6ba;
 }
 
 .all-steps {
@@ -533,6 +592,12 @@ nav img {
   width: 15rem;
 }
 .coffee h1 {
+  color: #333d4b;
+  margin: 1em 0;
+  font-family: "Fraunces", sans-serif;
+  text-align: center;
+}
+.coffee h2 {
   color: #333d4b;
   margin: 1em 0;
   font-family: "Fraunces", sans-serif;
@@ -746,12 +811,12 @@ footer a:hover {
 
 @media (min-width: 481px) {
   html {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 @media (min-width: 711px) {
   html {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   #hamburger {
@@ -762,16 +827,126 @@ footer a:hover {
     display: block;
   }
 
+  .card--choose--us {
+    padding: 2rem;
+  }
+  .card p {
+    max-width: 40ch;
+  }
+  .card--great--coffee {
+    background-image: url("../assets/home/tablet/image-hero-coffeepress.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 4rem;
+  }
   .card--great--coffee h1 {
-    font-size: 3rem;
+    width: clamp(10ch, 50%, 15ch);
+    font-size: clamp(1rem, 8vw, 4rem);
     line-height: 1.2;
-    max-width: 10ch;
     text-align: left;
+    margin: 1rem 0;
   }
   .card--great--coffee p {
-    max-width: 22em;
+    width: clamp(40ch, 60%, 60ch);
     margin: 0;
     text-align: left;
+  }
+  .card--option {
+    align-items: center;
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 90%;
+    background-color: #0e8684;
+  }
+  .card--option img {
+    margin: 2.5em 2rem;
+  }
+  .card--option h1 {
+    text-align: left;
+    font-size: 1.8rem;
+    min-width: 15ch;
+    margin: 0.5em auto;
+  }
+  .card--option p {
+    max-width: 38ch;
+    margin: 0;
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+    text-align: left;
+  }
+
+  .steps-illustration {
+    display: block;
+  }
+
+  .card--fake {
+    margin: 5em auto;
+  }
+  .card--fake h3 {
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .how-cards {
+    display: flex;
+  }
+
+  .card--how {
+    padding: 0.8em;
+  }
+  .card--how h1 {
+    margin: 0;
+    text-align: left;
+  }
+  .card--how h2 {
+    text-align: left;
+    max-width: 10ch;
+    margin: 0;
+  }
+  .card--how p {
+    margin: 1em 0;
+    font-size: 0.8rem;
+    text-align: left;
+    line-height: 1.6;
+    max-width: 35ch;
+  }
+
+  .collection__title {
+    position: relative;
+    top: 6.5rem;
+    z-index: -1;
+    margin: 0;
+  }
+  .collection__title h1 {
+    font-size: clamp(2rem, 12vw, 6rem);
+    width: 100%;
+    text-align: center;
+  }
+  .collection .products {
+    margin-top: 2.5rem;
+  }
+  .collection .coffee {
+    flex-direction: row;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  .collection .product-image {
+    margin: 0 3rem 0 0;
+  }
+  .collection .product-image img {
+    width: 12rem;
+    margin: auto;
+  }
+  .collection .product-description h2 {
+    text-align: left;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+  .collection .product-description p {
+    text-align: left;
+    font-size: 1rem, 5vw, 5rem;
   }
 }
 
