@@ -26,8 +26,12 @@ body {
 
 @import './partials/navbar';
 
-use {
-  width: 25px;
+// use {
+//   width: 25px;
+// }
+
+.hide-box {
+  display: none;
 }
 
 .card {
@@ -455,8 +459,8 @@ use {
   }
 }
 
-.question--opened {
-}
+// .question--opened {
+// }
 
 .choice {
   display: flex;
@@ -498,6 +502,7 @@ use {
         width: 20px;
         height: 20px;
         fill: #0e8784;
+        transition: 300ms fill;
       }
     }
   }
@@ -622,10 +627,9 @@ footer {
   background: #2c343e;
   padding: 3em 0;
   color: #fefcf7;
-  img {
-    margin: 1em auto;
-    width: 12rem;
-    max-width: 60%;
+  svg {
+    margin: 1.5em 2em;
+    // width: clamp(5em, 80vw, 40em);
   }
   ul {
     margin: auto;
@@ -648,15 +652,22 @@ footer {
 }
 
 .socials {
+  height: 2.3rem;
   width: 50%;
   display: flex;
   justify-content: space-around;
-  margin: 1rem auto;
-  img {
-    width: 1.5rem;
-    margin: 2rem auto;
+  margin: 3em auto;
+  svg {
+    fill: #fefcf7;
+    margin: auto;
+    display: block;
+    scale: 5;
+    width: clamp(5px, 1.5vw, 25px);
+    height: 10px;
+    transition: 300ms fill;
     &:hover {
       cursor: pointer;
+      fill: #fdd6b9;
     }
   }
 }
@@ -785,6 +796,20 @@ footer {
 @media (min-width: 711px) {
   html {
     font-size: 20px;
+  }
+
+  footer {
+    ul {
+      margin: 3em auto;
+    }
+    li {
+      display: inline;
+      user-select: none;
+      text-transform: uppercase;
+      list-style: none;
+      text-align: center;
+      margin: 1em;
+    }
   }
 
   #hamburger {

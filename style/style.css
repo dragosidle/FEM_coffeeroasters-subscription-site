@@ -178,8 +178,8 @@ nav img {
   color: #0e8684;
 }
 
-use {
-  width: 25px;
+.hide-box {
+  display: none;
 }
 
 .card {
@@ -621,6 +621,7 @@ use {
   width: 20px;
   height: 20px;
   fill: #0e8784;
+  transition: 300ms fill;
 }
 .choice .answers {
   margin: 0 0 5em 0;
@@ -741,10 +742,8 @@ footer {
   padding: 3em 0;
   color: #fefcf7;
 }
-footer img {
-  margin: 1em auto;
-  width: 12rem;
-  max-width: 60%;
+footer svg {
+  margin: 1.5em 2em;
 }
 footer ul {
   margin: auto;
@@ -766,17 +765,24 @@ footer a:hover {
 }
 
 .socials {
+  height: 2.3rem;
   width: 50%;
   display: flex;
   justify-content: space-around;
-  margin: 1rem auto;
+  margin: 3em auto;
 }
-.socials img {
-  width: 1.5rem;
-  margin: 2rem auto;
+.socials svg {
+  fill: #fefcf7;
+  margin: auto;
+  display: block;
+  scale: 5;
+  width: clamp(5px, 1.5vw, 25px);
+  height: 10px;
+  transition: 300ms fill;
 }
-.socials img:hover {
+.socials svg:hover {
   cursor: pointer;
+  fill: #fdd6b9;
 }
 
 .order-overview {
@@ -900,6 +906,18 @@ footer a:hover {
 @media (min-width: 711px) {
   html {
     font-size: 20px;
+  }
+
+  footer ul {
+    margin: 3em auto;
+  }
+  footer li {
+    display: inline;
+    user-select: none;
+    text-transform: uppercase;
+    list-style: none;
+    text-align: center;
+    margin: 1em;
   }
 
   #hamburger {
