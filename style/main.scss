@@ -158,10 +158,12 @@ body {
     background-image: url('../assets/about/mobile/image-hero-whitecup.jpg');
     background-size: cover;
     background-repeat: none;
+    background-position: center;
     padding: 4em 1.5em;
     width: 90%;
     p {
       margin: auto;
+      max-width: 36ch;
     }
   }
 
@@ -181,6 +183,7 @@ body {
     background-image: url('../assets/plan/mobile/image-hero-blackcup.jpg');
     background-size: cover;
     background-repeat: none;
+    background-position: center;
     min-height: 25rem;
     margin: 4em auto;
     h1 {
@@ -300,6 +303,7 @@ body {
   }
   p {
     margin: auto;
+    color: #d3d3d1#d3d3d1;
   }
 }
 
@@ -315,6 +319,7 @@ body {
   background-image: url('../assets/about/mobile/image-quality.jpg');
   background-size: cover;
   background-repeat: none;
+  background-position: center;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -697,13 +702,60 @@ footer {
     // display: contents;
     display: block;
   }
+
+  .quality {
+    margin: 15em auto 10em auto;
+    padding: 30vw 1.5em 4em 1.5em;
+    position: relative;
+    width: 90%;
+    background-image: url('../assets/about/tablet/bg-quality.png');
+    background-size: cover;
+    background-repeat: none;
+    h1 {
+      color: #fefcf7;
+      margin-left: -5px;
+    }
+    p {
+      color: #d3d3d1;
+      margin: auto;
+      font-size: 1rem;
+      width: clamp(1rem, 70%, 75ch);
+      font-weight: 300;
+    }
+  }
+
+  .quality-img {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    margin: 0 auto;
+    height: 50vw;
+    width: 80%;
+    border-radius: 0.8rem;
+    background-image: url('../assets/about/tablet/image-quality.jpg');
+    background-size: cover;
+    background-repeat: none;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+  }
+
   .card {
+    &--about {
+      padding: 6em 3em;
+      background-image: url('../assets/about/tablet/image-hero-whitecup.jpg');
+      h1 {
+        font-size: 2rem;
+        text-align: left;
+      }
+      p {
+        text-align: left;
+        margin: 0;
+      }
+    }
     &--choose--us {
       padding: 2rem;
     }
-    p {
-      max-width: 40ch;
-    }
+
     &--great--coffee {
       background-image: url('../assets/home/tablet/image-hero-coffeepress.jpg');
       background-size: cover;
@@ -747,6 +799,81 @@ footer {
         text-align: left;
       }
     }
+  }
+
+  .headquarters {
+    margin: 1rem auto;
+    width: 90%;
+    h2 {
+      margin: 1em;
+      text-align: left;
+      font-size: 1.5rem;
+      color: hsl(215, 5%, 54%);
+      font-family: 'Fraunces', sans-serif;
+    }
+  }
+
+  .countries {
+    display: flex;
+  }
+
+  .country {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1em auto;
+    color: #333d4b;
+    img {
+      width: 3rem;
+      margin: 1em 0 3em 0;
+      max-height: 3em;
+    }
+    h1 {
+      text-align: left;
+      font-size: 3vw;
+    }
+    ul {
+      margin-top: 1em;
+      li {
+        margin: 0.5em 0;
+        text-align: left;
+      }
+    }
+  }
+
+  .commitment {
+    position: relative;
+    width: 90%;
+    display: flex;
+    margin: 10em auto;
+    &__text {
+      padding: 2em 0;
+      margin: 0 0 0 3em;
+      // flex: 1;
+      h1 {
+        margin: 0 0 0.8em 0;
+        font-size: 4vw;
+        min-width: 13ch;
+        text-align: left;
+      }
+      p {
+        font-size: clamp(0.9rem, 2vw, 1.2rem);
+        text-align: left;
+        margin: 0;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .card--commitment {
+    min-width: 16em;
+    flex: 0.8;
+    padding: 4em 1.5em;
+    background-image: url('../assets/about/tablet/image-commitment.jpg');
+    background-size: cover;
+    background-repeat: none;
+    margin: auto 0;
+    max-height: 30em;
   }
 
   .steps-illustration {
