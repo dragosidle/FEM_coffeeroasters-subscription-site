@@ -178,8 +178,22 @@ nav img {
   color: #0e8684;
 }
 
-.hide-box {
-  display: none;
+.nav-logo {
+  width: 150px;
+  height: 30px;
+}
+
+.logo {
+  height: 30px;
+}
+
+.icon {
+  height: 20px;
+  width: clamp(20px, 5vw, 2rem);
+}
+
+.illustration {
+  width: clamp(30px, 15vh, 100px);
 }
 
 .card {
@@ -506,9 +520,9 @@ nav img {
   margin-left: -5px;
 }
 .quality p {
-  width: clamp(30ch, 60%, 45ch);
+  width: clamp(10ch, 90%, 40ch);
   margin: auto;
-  color: #d3d3d1 #d3d3d1;
+  color: #d3d3d1;
 }
 
 .quality-img {
@@ -542,7 +556,7 @@ nav img {
   margin: 2rem auto 1rem auto;
   text-align: center;
   line-height: 1.5;
-  width: clamp(30ch, 60%, 45ch);
+  width: clamp(20ch, 80%, 45ch);
   font-family: "Barlow", sans-serif;
   color: #333d4b;
 }
@@ -712,11 +726,11 @@ nav img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 1rem auto;
+  margin: 1em auto;
   color: #333d4b;
 }
-.country img {
-  margin: 3rem auto;
+.country svg {
+  margin: 1em auto;
 }
 .country h1 {
   text-align: center;
@@ -765,19 +779,17 @@ footer a:hover {
 }
 
 .socials {
-  height: 2.3rem;
-  width: 50%;
+  width: clamp(3em, 50%, 30em);
   display: flex;
   justify-content: space-around;
-  margin: 3em auto;
+  margin: 1em auto;
 }
 .socials svg {
   fill: #fefcf7;
   margin: auto;
   display: block;
-  scale: 5;
-  width: clamp(5px, 1.5vw, 25px);
-  height: 10px;
+  height: 50px;
+  width: clamp(30px, 15%, 150px);
   transition: 300ms fill;
 }
 .socials svg:hover {
@@ -984,7 +996,6 @@ footer a:hover {
     margin: 50vw auto 10em auto;
     padding: 30vw 1.5em 4em 1.5em;
     position: relative;
-    width: 90%;
     background-image: url("../assets/about/tablet/bg-quality.png");
     background-size: cover;
     background-repeat: none;
@@ -994,10 +1005,9 @@ footer a:hover {
     margin-left: -5px;
   }
   .quality p {
-    color: #d3d3d1;
-    margin: auto;
+    color: #fefcf7;
     font-size: 1rem;
-    width: clamp(1rem, 70%, 75ch);
+    width: clamp(10ch, 60%, 60ch);
     font-weight: 300;
   }
 
@@ -1112,10 +1122,8 @@ footer a:hover {
     margin: 1em auto;
     color: #333d4b;
   }
-  .country img {
-    width: 3rem;
+  .country svg {
     margin: 1em 0 3em 0;
-    max-height: 3em;
   }
   .country h1 {
     text-align: left;

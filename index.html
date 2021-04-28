@@ -16,7 +16,9 @@
   </head>
   <body>
     <nav>
-      <img src="./assets/shared/desktop/logo.svg" alt="" />
+      <svg class="nav-logo" role="img">
+        <use xlink:href="sprite.svg#logo"></use>
+      </svg>
 
       <div id="navigation">
         <ul>
@@ -190,16 +192,24 @@
     </section>
 
     <footer>
-      <img src="./assets/shared/desktop/logo-white.svg" alt="" />
+      <svg class="logo" role="img">
+        <use xlink:href="sprite.svg#logo-white"></use>
+      </svg>
       <ul>
         <li><a href="./index.html">Home</a></li>
         <li><a href="./about.html">About us</a></li>
         <li><a href="./plan.html">Create your plan</a></li>
       </ul>
       <div class="socials">
-        <img src="./assets/shared/desktop/icon-facebook.svg" alt="" />
-        <img src="./assets/shared/desktop/icon-twitter.svg" alt="" />
-        <img src="./assets/shared/desktop/icon-instagram.svg" alt="" />
+        <svg class="icon" role="img">
+          <use xlink:href="sprite.svg#icon-facebook"></use>
+        </svg>
+        <svg class="icon" role="img">
+          <use xlink:href="sprite.svg#icon-instagram"></use>
+        </svg>
+        <svg class="icon" role="img">
+          <use xlink:href="sprite.svg#icon-twitter"></use>
+        </svg>
       </div>
     </footer>
     <script src="./js/main.js"></script>

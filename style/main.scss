@@ -26,13 +26,34 @@ body {
 
 @import './partials/navbar';
 
-// use {
-//   width: 25px;
+//////////// SVG SPRITE
+
+// .svgSprite {
+//   height: 0;
+//   width: 0;
+//   display: none;
 // }
 
-.hide-box {
-  display: none;
+.nav-logo {
+  width: 150px;
+  height: 30px;
 }
+
+.logo {
+  height: 30px;
+}
+
+.icon {
+  height: 20px;
+  width: clamp(20px, 5vw, 2rem);
+  // margin: 0.5em;
+}
+
+.illustration {
+  width: clamp(30px, 15vh, 100px);
+}
+
+//////////// SVG SPRITE
 
 .card {
   margin: auto;
@@ -366,9 +387,9 @@ body {
     margin-left: -5px;
   }
   p {
-    width: clamp(30ch, 60%, 45ch);
+    width: clamp(10ch, 90%, 40ch);
     margin: auto;
-    color: #d3d3d1#d3d3d1;
+    color: #d3d3d1;
   }
 }
 
@@ -403,7 +424,7 @@ body {
       margin: 2rem auto 1rem auto;
       text-align: center;
       line-height: 1.5;
-      width: clamp(30ch, 60%, 45ch);
+      width: clamp(20ch, 80%, 45ch);
       font-family: 'Barlow', sans-serif;
       color: #333d4b;
     }
@@ -598,10 +619,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 1rem auto;
+  margin: 1em auto;
   color: #333d4b;
-  img {
-    margin: 3rem auto;
+  svg {
+    margin: 1em auto;
   }
   h1 {
     text-align: center;
@@ -629,7 +650,6 @@ footer {
   color: #fefcf7;
   svg {
     margin: 1.5em 2em;
-    // width: clamp(5em, 80vw, 40em);
   }
   ul {
     margin: auto;
@@ -652,18 +672,16 @@ footer {
 }
 
 .socials {
-  height: 2.3rem;
-  width: 50%;
+  width: clamp(3em, 50%, 30em);
   display: flex;
   justify-content: space-around;
-  margin: 3em auto;
+  margin: 1em auto;
   svg {
     fill: #fefcf7;
     margin: auto;
     display: block;
-    scale: 5;
-    width: clamp(5px, 1.5vw, 25px);
-    height: 10px;
+    height: 50px;
+    width: clamp(30px, 15%, 150px);
     transition: 300ms fill;
     &:hover {
       cursor: pointer;
@@ -877,7 +895,6 @@ footer {
     margin: 50vw auto 10em auto;
     padding: 30vw 1.5em 4em 1.5em;
     position: relative;
-    width: 90%;
     background-image: url('../assets/about/tablet/bg-quality.png');
     background-size: cover;
     background-repeat: none;
@@ -886,10 +903,9 @@ footer {
       margin-left: -5px;
     }
     p {
-      color: #d3d3d1;
-      margin: auto;
+      color: #fefcf7;
       font-size: 1rem;
-      width: clamp(1rem, 70%, 75ch);
+      width: clamp(10ch, 60%, 60ch);
       font-weight: 300;
     }
   }
@@ -1007,10 +1023,8 @@ footer {
     justify-content: center;
     margin: 1em auto;
     color: #333d4b;
-    img {
-      width: 3rem;
+    svg {
       margin: 1em 0 3em 0;
-      max-height: 3em;
     }
     h1 {
       text-align: left;

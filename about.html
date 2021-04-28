@@ -11,13 +11,15 @@
       href="./assets/favicon-32x32.png"
     />
 
-    <title>Frontend Mentor | Coffeeroasters subscription site</title>
+    <title>Coffeeroasters</title>
     <link rel="stylesheet" href="./style/style.css" />
   </head>
 
   <body>
     <nav>
-      <img src="./assets/shared/desktop/logo.svg" alt="" />
+      <svg class="nav-logo" role="img">
+        <use xlink:href="sprite.svg#logo"></use>
+      </svg>
 
       <div id="navigation">
         <ul>
@@ -88,7 +90,9 @@
       <h2>Our headquarters</h2>
       <div class="countries">
         <div class="country">
-          <img src="./assets/about/desktop/illustration-uk.svg" alt="" />
+          <svg class="illustration" role="img">
+            <use xlink:href="sprite.svg#illustration-uk"></use>
+          </svg>
           <h1>United Kingdom</h1>
           <ul>
             <li>68 Asfordby Rd</li>
@@ -98,7 +102,9 @@
           </ul>
         </div>
         <div class="country">
-          <img src="./assets/about/desktop/illustration-canada.svg" alt="" />
+          <svg class="illustration" role="img">
+            <use xlink:href="sprite.svg#illustration-canada"></use>
+          </svg>
           <h1>Canada</h1>
           <ul>
             <li>1528 Eglinton Avenue</li>
@@ -108,7 +114,9 @@
           </ul>
         </div>
         <div class="country">
-          <img src="./assets/about/desktop/illustration-australia.svg" alt="" />
+          <svg class="illustration" role="img">
+            <use xlink:href="sprite.svg#illustration-australia"></use>
+          </svg>
           <h1>Australia</h1>
           <ul>
             <li>36 Swanston Street</li>
@@ -121,16 +129,24 @@
     </section>
 
     <footer>
-      <img src="./assets/shared/desktop/logo-white.svg" alt="" />
+      <svg class="logo" role="img">
+        <use xlink:href="sprite.svg#logo-white"></use>
+      </svg>
       <ul>
         <li><a href="./index.html">Home</a></li>
         <li><a href="./about.html">About us</a></li>
         <li><a href="./plan.html">Create your plan</a></li>
       </ul>
       <div class="socials">
-        <img src="./assets/shared/desktop/icon-facebook.svg" alt="" />
-        <img src="./assets/shared/desktop/icon-twitter.svg" alt="" />
-        <img src="./assets/shared/desktop/icon-instagram.svg" alt="" />
+        <svg class="icon" role="img">
+          <use xlink:href="sprite.svg#icon-facebook"></use>
+        </svg>
+        <svg class="icon" role="img">
+          <use xlink:href="sprite.svg#icon-instagram"></use>
+        </svg>
+        <svg class="icon" role="img">
+          <use xlink:href="sprite.svg#icon-twitter"></use>
+        </svg>
       </div>
     </footer>
     <script src="./js/main.js"></script>
