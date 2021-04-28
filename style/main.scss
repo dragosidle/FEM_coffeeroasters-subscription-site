@@ -24,6 +24,18 @@ body {
   background-color: #fefcf7;
 }
 
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+  user-select: none;
+}
+
 @import './partials/navbar';
 
 //////////// SVG SPRITE
@@ -229,13 +241,13 @@ body {
   display: none;
   position: relative;
   width: 70%;
-  height: 2rem;
+  height: 1.5rem;
   // background-color: rgba(255, 0, 0, 0.212);
   .circle1 {
     left: 0;
     position: absolute;
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     background-color: white;
     border-radius: 50%;
     border-style: solid;
@@ -246,8 +258,8 @@ body {
     transform-origin: 50% 50%;
     left: 50%;
     position: absolute;
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     background-color: white;
     border-radius: 50%;
     border-style: solid;
@@ -258,8 +270,8 @@ body {
     transform-origin: 50% 50%;
     right: 0;
     position: absolute;
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     background-color: white;
     border-radius: 50%;
     border-style: solid;
@@ -639,8 +651,7 @@ body {
 }
 
 footer {
-  width: 95%;
-  margin: 8em auto 1em auto;
+  margin: 8em 0 0 0;
   font-family: 'Barlow', sans-serif;
   display: flex;
   justify-content: center;
@@ -740,6 +751,7 @@ footer {
 }
 
 .modal {
+  z-index: 6;
   display: flex;
   flex-direction: column;
   transform: translate(0, -50%);
@@ -757,7 +769,7 @@ footer {
       text-align: center;
       font-family: 'Fraunces', sans-serif;
       color: #fefcf7;
-      font-size: 1.5rem;
+      font-size: clamp(1rem, 5vw, 3rem);
       margin: 1em 0.5em;
     }
   }
@@ -765,9 +777,9 @@ footer {
     h4 {
       font-family: 'Fraunces', sans-serif;
       color: #83888f;
-      font-size: 1.5rem;
+      font-size: clamp(1rem, 5vw, 3rem);
       line-height: 1.6;
-      margin: 0.5em;
+      margin: 1em;
     }
     span {
       color: #0e8684;
@@ -779,11 +791,12 @@ footer {
     }
   }
   p {
-    margin: 0 0.5em;
+    margin: 0 2em;
     color: hsl(215, 5%, 54%);
     font-family: 'Barlow', sans-serif;
     font-size: 0.8rem;
     line-height: 1.5;
+    text-align: center;
   }
   button {
     user-select: none;
@@ -792,7 +805,7 @@ footer {
     padding: 1em 2em;
     border-radius: 0.5rem;
     font-family: 'Fraunces', sans-serif;
-    margin: 1em auto;
+    margin: 1em;
     border: none;
     outline: none;
     font-size: 1rem;
@@ -805,9 +818,31 @@ footer {
   }
 }
 
+.checkout-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2em 0;
+  h3 {
+    color: #333d4b;
+    font-family: 'Fraunces', sans-serif;
+    font-size: 2rem;
+  }
+}
+
 @media (min-width: 481px) {
   html {
     font-size: 18px;
+  }
+
+  .modal {
+    p {
+      text-align: left;
+    }
+  }
+  .checkout-preview {
+    flex-direction: row;
   }
 }
 
@@ -816,12 +851,17 @@ footer {
     font-size: 20px;
   }
 
+  .nav-logo {
+    width: 200px;
+    height: 50px;
+  }
+
   footer {
     ul {
       margin: 3em auto;
+      display: inline;
     }
     li {
-      display: inline;
       user-select: none;
       text-transform: uppercase;
       list-style: none;
@@ -966,7 +1006,7 @@ footer {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
-      max-width: 90%;
+      max-width: 40em;
       background-color: hsl(179, 81%, 29%);
       img {
         margin: 2.5em 2rem;
@@ -1118,12 +1158,13 @@ footer {
 
   .collection {
     &__title {
+      user-select: none;
       position: relative;
       top: 6.5rem;
       z-index: -1;
       margin: 0;
       h1 {
-        font-size: clamp(2rem, 12vw, 6rem);
+        font-size: clamp(2rem, 12vw, 8rem);
         width: 100%;
         text-align: center;
       }
@@ -1156,6 +1197,155 @@ footer {
       p {
         text-align: left;
         font-size: (1rem, 5vw, 5rem);
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  html {
+    font-size: 20px;
+  }
+
+  .nav-logo {
+    width: 200px;
+    height: 80px;
+  }
+
+  .card--great--coffee {
+    padding: 5em 8em;
+    background-image: url('../assets/home/desktop/image-hero-coffeepress.jpg');
+    h1 {
+      width: clamp(10ch, 50%, 12ch);
+      font-size: clamp(1rem, 12vw, 6rem);
+    }
+    p {
+      margin: 2em 0;
+    }
+    button {
+      margin: 5em auto 0 0;
+    }
+  }
+
+  .collection {
+    &__title {
+      top: 8em;
+      h1 {
+        font-size: clamp(2rem, 10vw, 10rem);
+      }
+    }
+
+    .products {
+      flex-direction: row;
+    }
+
+    .product-image {
+      margin: 0 auto 4rem auto;
+      img {
+        width: 300px;
+      }
+    }
+
+    .product-description {
+      position: relative;
+      height: 8em;
+      h2 {
+        width: 100%;
+        text-align: center;
+        transform-origin: center center;
+        margin: 0 auto 1em auto;
+      }
+      p {
+        font-size: clamp(0.8rem, 1vw, 1rem);
+        text-align: center;
+        line-height: 1.6;
+      }
+    }
+    .coffee {
+      flex-direction: column;
+    }
+  }
+
+  .card--option {
+    width: clamp(3em, 20vw, 15em);
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    img {
+      width: 5em;
+      margin: 1em;
+    }
+  }
+
+  .option__description {
+    h1 {
+      font-size: 1.2rem;
+      text-align: center;
+      width: 100%;
+    }
+    p {
+      text-align: center;
+      font-size: 0.8rem;
+      line-height: 1.6;
+    }
+  }
+
+  .option-cards {
+    left: 50%;
+    transform: translate(-50%, 0);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card--choose--us {
+    position: relative;
+    padding: 2em 0 10em 0;
+    margin: 6em auto 22em auto;
+  }
+
+  .card--how {
+    p {
+      margin: 2em 0;
+    }
+    h2 {
+      margin: 1em 0;
+    }
+  }
+
+  .card--fake {
+    button {
+      margin: 2em 0 0 0;
+      padding: 1em 3em;
+    }
+  }
+
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    padding: 1em 0;
+    flex-direction: row;
+    .logo {
+      width: 300px;
+      margin: auto 3em;
+    }
+    ul {
+      margin: auto 0 auto 1em;
+    }
+    li {
+      display: inline;
+      font-weight: 500;
+    }
+    .socials {
+      margin: auto 3em auto auto;
+      height: 50px;
+      width: 200px;
+      .icon {
+        margin: auto 0;
+        height: 30px;
+        width: 30px;
       }
     }
   }

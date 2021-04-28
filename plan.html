@@ -316,7 +316,7 @@
 </section>
 
 <!-- Modal -->
-<section class="modal hidden">
+<div class="modal hidden">
   <div class="modal__title">
     <h1>
       Order Summary
@@ -326,15 +326,19 @@
     <h4>
       “I drink my coffee as <span id="how">Filter</span>, with a <span id="type">Decaf</span> type of bean. <span id="quantity">250g</span> ground ala <span id="grind">Cafetiere</span>, sent to me <span id="frequency">Every Week</span>.”    
     </h4>
+    <p>
+      Is this correct? You can proceed to checkout or go back to plan selection if something 
+      is off. Subscription discount codes can also be redeemed at the checkout.
+    </p>
   </div>
-  <p>
-    Is this correct? You can proceed to checkout or go back to plan selection if something 
-    is off. Subscription discount codes can also be redeemed at the checkout.
-  </p>
-  <button id="checkout">
-    Checkout<span> -plan info</span>
-  </button>
-</section>
+  <div class="checkout-preview">
+    <h3>$14/mo</h3>
+    <button id="checkout">
+      Checkout
+    </button>
+  </div>
+</div>
+<div id="overlay" class="hidden"></div>
 <!-- End modal -->
 
 <footer>

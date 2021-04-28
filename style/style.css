@@ -14,6 +14,18 @@ body {
   background-color: #fefcf7;
 }
 
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+  user-select: none;
+}
+
 nav {
   user-select: none;
   margin: 1rem auto;
@@ -363,13 +375,13 @@ nav img {
   display: none;
   position: relative;
   width: 70%;
-  height: 2rem;
+  height: 1.5rem;
 }
 .steps-illustration .circle1 {
   left: 0;
   position: absolute;
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   background-color: white;
   border-radius: 50%;
   border-style: solid;
@@ -380,8 +392,8 @@ nav img {
   transform-origin: 50% 50%;
   left: 50%;
   position: absolute;
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   background-color: white;
   border-radius: 50%;
   border-style: solid;
@@ -392,8 +404,8 @@ nav img {
   transform-origin: 50% 50%;
   right: 0;
   position: absolute;
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   background-color: white;
   border-radius: 50%;
   border-style: solid;
@@ -746,8 +758,7 @@ nav img {
 }
 
 footer {
-  width: 95%;
-  margin: 8em auto 1em auto;
+  margin: 8em 0 0 0;
   font-family: "Barlow", sans-serif;
   display: flex;
   justify-content: center;
@@ -847,6 +858,7 @@ footer a:hover {
 }
 
 .modal {
+  z-index: 6;
   display: flex;
   flex-direction: column;
   transform: translate(0, -50%);
@@ -866,15 +878,15 @@ footer a:hover {
   text-align: center;
   font-family: "Fraunces", sans-serif;
   color: #fefcf7;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 5vw, 3rem);
   margin: 1em 0.5em;
 }
 .modal__preview h4 {
   font-family: "Fraunces", sans-serif;
   color: #83888f;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 5vw, 3rem);
   line-height: 1.6;
-  margin: 0.5em;
+  margin: 1em;
 }
 .modal__preview span {
   color: #0e8684;
@@ -885,11 +897,12 @@ footer a:hover {
   color: #0f9693;
 }
 .modal p {
-  margin: 0 0.5em;
+  margin: 0 2em;
   color: #848990;
   font-family: "Barlow", sans-serif;
   font-size: 0.8rem;
   line-height: 1.5;
+  text-align: center;
 }
 .modal button {
   user-select: none;
@@ -898,7 +911,7 @@ footer a:hover {
   padding: 1em 2em;
   border-radius: 0.5rem;
   font-family: "Fraunces", sans-serif;
-  margin: 1em auto;
+  margin: 1em;
   border: none;
   outline: none;
   font-size: 1rem;
@@ -910,9 +923,30 @@ footer a:hover {
   background-color: #66d2cf;
 }
 
+.checkout-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2em 0;
+}
+.checkout-preview h3 {
+  color: #333d4b;
+  font-family: "Fraunces", sans-serif;
+  font-size: 2rem;
+}
+
 @media (min-width: 481px) {
   html {
     font-size: 18px;
+  }
+
+  .modal p {
+    text-align: left;
+  }
+
+  .checkout-preview {
+    flex-direction: row;
   }
 }
 @media (min-width: 711px) {
@@ -920,11 +954,16 @@ footer a:hover {
     font-size: 20px;
   }
 
+  .nav-logo {
+    width: 200px;
+    height: 50px;
+  }
+
   footer ul {
     margin: 3em auto;
+    display: inline;
   }
   footer li {
-    display: inline;
     user-select: none;
     text-transform: uppercase;
     list-style: none;
@@ -1065,7 +1104,7 @@ footer a:hover {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    max-width: 90%;
+    max-width: 40em;
     background-color: #0e8684;
   }
   .card--option img {
@@ -1213,13 +1252,14 @@ footer a:hover {
   }
 
   .collection__title {
+    user-select: none;
     position: relative;
     top: 6.5rem;
     z-index: -1;
     margin: 0;
   }
   .collection__title h1 {
-    font-size: clamp(2rem, 12vw, 6rem);
+    font-size: clamp(2rem, 12vw, 8rem);
     width: 100%;
     text-align: center;
   }
@@ -1246,6 +1286,143 @@ footer a:hover {
   .collection .product-description p {
     text-align: left;
     font-size: 1rem, 5vw, 5rem;
+  }
+}
+@media (min-width: 1440px) {
+  html {
+    font-size: 20px;
+  }
+
+  .nav-logo {
+    width: 200px;
+    height: 80px;
+  }
+
+  .card--great--coffee {
+    padding: 5em 8em;
+    background-image: url("../assets/home/desktop/image-hero-coffeepress.jpg");
+  }
+  .card--great--coffee h1 {
+    width: clamp(10ch, 50%, 12ch);
+    font-size: clamp(1rem, 12vw, 6rem);
+  }
+  .card--great--coffee p {
+    margin: 2em 0;
+  }
+  .card--great--coffee button {
+    margin: 5em auto 0 0;
+  }
+
+  .collection__title {
+    top: 8em;
+  }
+  .collection__title h1 {
+    font-size: clamp(2rem, 10vw, 10rem);
+  }
+  .collection .products {
+    flex-direction: row;
+  }
+  .collection .product-image {
+    margin: 0 auto 4rem auto;
+  }
+  .collection .product-image img {
+    width: 300px;
+  }
+  .collection .product-description {
+    position: relative;
+    height: 8em;
+  }
+  .collection .product-description h2 {
+    width: 100%;
+    text-align: center;
+    transform-origin: center center;
+    margin: 0 auto 1em auto;
+  }
+  .collection .product-description p {
+    font-size: clamp(0.8rem, 1vw, 1rem);
+    text-align: center;
+    line-height: 1.6;
+  }
+  .collection .coffee {
+    flex-direction: column;
+  }
+
+  .card--option {
+    width: clamp(3em, 20vw, 15em);
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+  }
+  .card--option img {
+    width: 5em;
+    margin: 1em;
+  }
+
+  .option__description h1 {
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+  }
+  .option__description p {
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .option-cards {
+    left: 50%;
+    transform: translate(-50%, 0);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card--choose--us {
+    position: relative;
+    padding: 2em 0 10em 0;
+    margin: 6em auto 22em auto;
+  }
+
+  .card--how p {
+    margin: 2em 0;
+  }
+  .card--how h2 {
+    margin: 1em 0;
+  }
+
+  .card--fake button {
+    margin: 2em 0 0 0;
+    padding: 1em 3em;
+  }
+
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    padding: 1em 0;
+    flex-direction: row;
+  }
+  footer .logo {
+    width: 300px;
+    margin: auto 3em;
+  }
+  footer ul {
+    margin: auto 0 auto 1em;
+  }
+  footer li {
+    display: inline;
+    font-weight: 500;
+  }
+  footer .socials {
+    margin: auto 3em auto auto;
+    height: 50px;
+    width: 200px;
+  }
+  footer .socials .icon {
+    margin: auto 0;
+    height: 30px;
+    width: 30px;
   }
 }
 
