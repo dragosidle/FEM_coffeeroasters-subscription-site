@@ -1062,13 +1062,14 @@ footer {
     flex-direction: column;
     justify-content: center;
     margin: 1em auto;
+    width: clamp(300px, 10vw, 450px);
     color: #333d4b;
     svg {
       margin: 1em 0 3em 0;
     }
     h1 {
       text-align: left;
-      font-size: 3vw;
+      font-size: 2.5vw;
     }
     ul {
       margin-top: 1em;
@@ -1267,7 +1268,8 @@ footer {
   }
 
   .card--option {
-    width: clamp(3em, 20vw, 15em);
+    width: clamp(3em, 20vw, 25em);
+    height: 20em;
     margin: 1em;
     display: flex;
     flex-direction: column;
@@ -1314,6 +1316,9 @@ footer {
   }
 
   .card--fake {
+    h3 {
+      margin: 0 0 10vw 0;
+    }
     button {
       margin: 2em 0 0 0;
       padding: 1em 3em;
@@ -1325,7 +1330,7 @@ footer {
     align-items: center;
     justify-content: center;
     height: 150px;
-    padding: 1em 0;
+    padding: 1em 4em;
     flex-direction: row;
     .logo {
       width: 300px;
@@ -1346,6 +1351,88 @@ footer {
         margin: auto 0;
         height: 30px;
         width: 30px;
+      }
+    }
+  }
+
+  .card--about {
+    padding-left: 6em;
+    background-image: url('../assets/about/desktop/image-hero-whitecup.jpg');
+    h1 {
+      font-size: 3rem;
+    }
+    p {
+      max-width: 46ch;
+      line-height: 1.8;
+    }
+  }
+
+  .commitment {
+    width: 70%;
+  }
+
+  .card--commitment {
+    background-image: url('../assets/about/desktop/image-commitment.jpg');
+    background-position: center;
+    min-height: 36em;
+    min-width: 20em;
+  }
+
+  .commitment__text {
+    padding: 6em 0;
+    margin-left: 6em;
+    width: 50%;
+    h1 {
+      font-size: clamp(1rem, 10vw, 2.4rem);
+    }
+    p {
+      width: 50ch;
+      font-size: clamp(0.8rem, 5vw, 1rem);
+      line-height: 1.6;
+    }
+  }
+
+  .quality {
+    margin: 20em auto 15em auto;
+    padding: 3vw 3em 4em 3em;
+    height: clamp(15em, 30vw, 50em);
+    &-text {
+      width: 60%;
+      margin: auto 0 auto 6em;
+      p {
+        margin: 0;
+        text-align: left;
+        font-size: 1rem;
+      }
+      h1 {
+        margin: 1em 0;
+        width: 60%;
+        text-align: left;
+        font-size: clamp(1.4rem, 2vw, 2rem);
+      }
+    }
+    &-img {
+      width: clamp(20em, 25vw, 30em);
+      height: clamp(20em, 26vw, 30em);
+      right: 0;
+      top: -5em;
+      transform: translate(0, 0);
+      background-image: url('../assets/about/desktop/image-quality.jpg');
+    }
+  }
+
+  .headquarters {
+    h2 {
+      margin-bottom: 3em;
+    }
+  }
+
+  .countries {
+    .country {
+      width: 400px;
+      margin: auto 3em;
+      h1 {
+        font-size: clamp(1rem, 2vw, 3rem);
       }
     }
   }
