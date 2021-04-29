@@ -237,6 +237,10 @@ body {
   }
 }
 
+.questions-map {
+  display: none;
+}
+
 .steps-illustration {
   display: none;
   position: relative;
@@ -290,7 +294,7 @@ body {
 }
 
 .steps-illustration-2 {
-  margin: 3em 0 0 0;
+  margin: 3em 0 0 2em;
   display: none;
   position: relative;
   width: 70%;
@@ -342,6 +346,7 @@ body {
 }
 
 .all-steps {
+  transition: 300ms width ease-in-out;
   margin: 6em auto;
   padding: 6em 1em;
   width: 100%;
@@ -499,7 +504,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 90%;
-  margin: 1em auto;
+  margin: 1em 0 1em auto;
   .question {
     display: flex;
     justify-content: space-between;
@@ -547,7 +552,7 @@ body {
   }
 
   .answer {
-    width: clamp(5em, 100%, 50em);
+    width: clamp(8em, 100%, 50em);
     background-color: #f4f1eb;
     transition: 100ms background;
     border-radius: 0.5em;
@@ -559,7 +564,7 @@ body {
     }
     h3 {
       font-family: 'Fraunces', sans-serif;
-      font-size: clamp(1rem, 10vw, 1.8rem);
+      font-size: clamp(0.8rem, 10vw, 1.8rem);
       color: #333d4b;
     }
     p {
@@ -659,6 +664,7 @@ footer {
   background: #2c343e;
   padding: 3em 0;
   color: #fefcf7;
+  box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.2);
   svg {
     margin: 1.5em 2em;
   }
@@ -846,6 +852,10 @@ footer {
   }
 }
 
+.choice {
+  margin: 1em auto;
+}
+
 @media (min-width: 711px) {
   html {
     font-size: 20px;
@@ -854,6 +864,15 @@ footer {
   .nav-logo {
     width: 200px;
     height: 50px;
+  }
+
+  .choice {
+    margin: 1em auto;
+  }
+
+  .options {
+    margin: 0 auto;
+    width: clamp(20em, 100%, 50em);
   }
 
   footer {
@@ -890,6 +909,9 @@ footer {
   }
 
   .all-steps {
+    max-width: 90%;
+    padding: 6em 7vw;
+    transition: 300ms width ease-in-out;
     background-image: url('../assets/plan/tablet/bg-steps.png');
   }
 
@@ -923,11 +945,18 @@ footer {
   }
 
   .answer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin: 0.5em !important;
     padding: 3em 1em 6em 1em !important;
-    width: clamp(5em, 100%, 15em) !important;
+    // width: clamp(200px, 60%, 15em) !important;
+    // min-width: 200px;
     p {
       font-size: clamp(0.6rem, 2vw, 1rem);
+    }
+    h3 {
+      font-size: clamp(0.8rem, 4vw, 1.8rem) !important;
     }
   }
 
@@ -1208,6 +1237,10 @@ footer {
     font-size: 20px;
   }
 
+  nav {
+    max-width: 80%;
+  }
+
   .nav-logo {
     width: 200px;
     height: 80px;
@@ -1435,5 +1468,89 @@ footer {
         font-size: clamp(1rem, 2vw, 3rem);
       }
     }
+  }
+
+  .card--plan {
+    max-width: 80%;
+    background-image: url('../assets/plan/desktop/image-hero-blackcup.jpg');
+    h1 {
+      font-size: clamp(3.5rem, 5vw, 5rem);
+      margin: 0.5em 0 0.3em 0;
+      line-height: 1.2;
+    }
+  }
+
+  .all-steps {
+    max-width: 80%;
+    transition: 300ms width ease-in-out;
+  }
+
+  .steps-illustration-2 {
+    background-image: url('../assets/plan/desktop/bg-steps.png');
+    margin: 0 2em;
+  }
+
+  .questions-map {
+    display: flex;
+    min-width: 300px;
+    flex-direction: column;
+    margin: 0 3em 0 0;
+  }
+
+  .separator {
+    height: 2px;
+    width: 100%;
+    background-color: #adb0b241;
+  }
+
+  .question-map1,
+  .question-map2,
+  .question-map3,
+  .question-map4,
+  .question-map5 {
+    cursor: pointer;
+    display: flex;
+    margin: 1.2em 0;
+    h3 {
+      color: #cdcecd;
+      font-size: 1.5rem;
+      font-family: 'Fraunces', sans-serif;
+    }
+    h2 {
+      margin-left: 1em;
+      color: #adb0b2;
+      font-size: 1.5rem;
+      font-family: 'Fraunces', sans-serif;
+    }
+    &:hover {
+      h3 {
+        color: #b4b6b8;
+      }
+      h2 {
+        color: #848990;
+      }
+    }
+  }
+
+  .questions-section {
+    display: flex;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .choice {
+    width: 100%;
+  }
+
+  .order-overview {
+    padding: 2em 0 0 0;
+    button {
+      margin: 3em 5em 0 auto;
+    }
+  }
+
+  .order-preview {
+    width: 50%;
+    margin: 0 5em 0 auto;
   }
 }

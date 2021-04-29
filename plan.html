@@ -83,54 +83,94 @@
 
  <section class="questions-section">
 
-   <div class="questions-map hidden">
-     01 Preferences
-     02 Bean type
-     03 Quantity
-     04 Grind option
-     05 Deliveries
+   <div class="questions-map">
+     <div class="question-map1">
+       <h3>
+         01
+       </h3>
+       <h2>
+         Preferences
+       </h2>
+     </div>
+     <div class="separator"></div>
+     <div class="question-map2">
+       <h3>
+         02
+       </h3>
+       <h2>
+         Bean type
+       </h2>
+     </div>
+     <div class="separator"></div>
+     <div class="question-map3">
+       <h3>
+         03
+       </h3>
+       <h2>
+         Quantity
+       </h2>
+     </div>
+     <div class="separator"></div>
+     <div class="question-map4">
+       <h3>
+         04
+       </h3>
+       <h2>
+         Grind option
+       </h2>
+     </div>
+     <div class="separator"></div>
+     <div class="question-map5">
+       <h3>
+         05
+       </h3>
+       <h2>
+         Deliveries
+       </h2>
+     </div>
     </div>
     
-    <div class="choice">
-      <div class="question">
-        <h1>
-          How do you drink your coffee?
-        </h1>
-        <div class="arrow-wrap">
-          <svg role="img">
-            <use xlink:href="sprite.svg#icon-arrow"></use>
-          </svg>
-        </div>
-      </div>
-      
-      <div class="answers">
-        <div class="answer">
-          <h3>
-            Capsule
-          </h3>
-          <p>
-            Compatible with Nespresso systems and similar brewers
-          </p>
-        </div>
-        <div class="answer">
-          <h3>
-            Filter
-          </h3>
-          <p>
-            For pour over or drip methods like Aeropress, Chemex, and V60
-          </p>
+    <div class="options">
+      <div class="choice">
+        <div class="question">
+          <h1>
+            How do you drink your coffee?
+          </h1>
+          <div class="arrow-wrap">
+            <svg role="img">
+              <use xlink:href="sprite.svg#icon-arrow"></use>
+            </svg>
+          </div>
         </div>
         
-        <div class="answer">
-          <h3>
-            Espresso
-          </h3>
-          <p>
-            Dense and finely ground beans for an intense, flavorful experience
-          </p>
+        <div class="answers">
+          <div class="answer">
+            <h3>
+              Capsule
+            </h3>
+            <p>
+              Compatible with Nespresso systems and similar brewers
+            </p>
+          </div>
+          <div class="answer">
+            <h3>
+              Filter
+            </h3>
+            <p>
+              For pour over or drip methods like Aeropress, Chemex, and V60
+            </p>
+          </div>
+          
+          <div class="answer">
+            <h3>
+              Espresso
+            </h3>
+            <p>
+              Dense and finely ground beans for an intense, flavorful experience
+            </p>
+          </div>
         </div>
       </div>
-    </div>
 
     <div class="choice">
       <div class="question">
@@ -295,25 +335,25 @@
         </div>
       </div>
     </div>
-
-  </section> 
+    <section class="order-overview">
+      <div class="card order-preview">    
+        <h3>
+          Order Summary
+        </h3>
+          <!-- <h4>
+            “I drink my coffee as <span id="how">Filter</span>, with a <span id="type">Decaf</span> type of bean. <span id="quantity">250g</span> ground ala <span id="grind">Cafetiere</span>, sent to me <span id="frequency">Every Week</span>.”    
+          </h4> -->
+          <h4>
+            Customize your plan with the <span>above</span> options then come back to review and confirm.
+          </h4>
+        </div>
+        <button id="confirm" class="disabled">
+          Create my plan!
+        </button>
+    </section>
+  </div>
+</section> 
     
-  <section class="order-overview">
-    <div class="card order-preview">    
-<h3>
-  Order Summary
-</h3>
-  <!-- <h4>
-    “I drink my coffee as <span id="how">Filter</span>, with a <span id="type">Decaf</span> type of bean. <span id="quantity">250g</span> ground ala <span id="grind">Cafetiere</span>, sent to me <span id="frequency">Every Week</span>.”    
-  </h4> -->
-  <h4>
-    Customize your plan with the <span>above</span> options then come back to review and confirm.
-  </h4>
-</div>
-<button id="confirm" class="disabled">
-  Create my plan!
-</button>
-</section>
 
 <!-- Modal -->
 <div class="modal hidden">
