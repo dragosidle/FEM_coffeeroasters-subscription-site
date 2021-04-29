@@ -107,6 +107,7 @@ body {
   }
   &--great--coffee {
     padding: 4em 1.5em;
+    margin: 4em auto;
     width: 90%;
     background-image: url('../assets/home/mobile/image-hero-coffeepress.jpg');
     background-size: cover;
@@ -962,7 +963,7 @@ footer {
 
   .quality {
     margin: 50vw auto 10em auto;
-    padding: 30vw 1.5em 4em 1.5em;
+    padding: 20vw 1.5em 4em 1.5em;
     position: relative;
     background-image: url('../assets/about/tablet/bg-quality.png');
     background-size: cover;
@@ -985,8 +986,8 @@ footer {
     transform: translate(-50%, -50%);
     position: absolute;
     margin: 0 auto;
-    height: 50vw;
-    width: 80%;
+    height: 30vw;
+    width: 60%;
     border-radius: 0.8rem;
     background-image: url('../assets/about/tablet/image-quality.jpg');
     background-size: cover;
@@ -997,6 +998,7 @@ footer {
   .card {
     &--about {
       padding: 6em 3em;
+      margin: 4em auto;
       background-image: url('../assets/about/tablet/image-hero-whitecup.jpg');
       h1 {
         font-size: 2rem;
@@ -1208,6 +1210,9 @@ footer {
       flex-direction: row;
       justify-content: center;
       margin: 2rem 0;
+      .product-description {
+        margin-left: 10vw;
+      }
     }
 
     .product-image {
@@ -1247,11 +1252,12 @@ footer {
   }
 
   .card--great--coffee {
-    padding: 5em 8em;
+    width: 80%;
+    padding: 5em 6em;
     background-image: url('../assets/home/desktop/image-hero-coffeepress.jpg');
     h1 {
-      width: clamp(10ch, 50%, 12ch);
-      font-size: clamp(1rem, 12vw, 6rem);
+      width: clamp(6ch, 60%, 10em);
+      font-size: clamp(1rem, 12vw, 4rem);
     }
     p {
       margin: 2em 0;
@@ -1262,6 +1268,7 @@ footer {
   }
 
   .collection {
+    width: 80%;
     &__title {
       top: 8em;
       h1 {
@@ -1297,6 +1304,9 @@ footer {
     }
     .coffee {
       flex-direction: column;
+      .product-description {
+        margin: 0 auto;
+      }
     }
   }
 
@@ -1334,6 +1344,7 @@ footer {
   }
 
   .card--choose--us {
+    width: 80%;
     position: relative;
     padding: 2em 0 10em 0;
     margin: 6em auto 22em auto;
@@ -1342,13 +1353,16 @@ footer {
   .card--how {
     p {
       margin: 2em 0;
+      font-size: clamp(0.8rem, 10vw, 1rem);
     }
     h2 {
       margin: 1em 0;
+      min-width: 100%;
     }
   }
 
   .card--fake {
+    width: 80%;
     h3 {
       margin: 0 0 10vw 0;
     }
@@ -1362,7 +1376,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 150px;
+    height: 100px;
     padding: 1em 4em;
     flex-direction: row;
     .logo {
@@ -1389,6 +1403,7 @@ footer {
   }
 
   .card--about {
+    width: 80%;
     padding-left: 6em;
     background-image: url('../assets/about/desktop/image-hero-whitecup.jpg');
     h1 {
@@ -1426,9 +1441,10 @@ footer {
   }
 
   .quality {
+    width: 80%;
     margin: 20em auto 15em auto;
     padding: 3vw 3em 4em 3em;
-    height: clamp(15em, 30vw, 50em);
+    height: clamp(25em, 30vw, 50em);
     &-text {
       width: 60%;
       margin: auto 0 auto 6em;
@@ -1439,9 +1455,9 @@ footer {
       }
       h1 {
         margin: 1em 0;
-        width: 60%;
+        width: 80%;
         text-align: left;
-        font-size: clamp(1.4rem, 2vw, 2rem);
+        font-size: clamp(1.8rem, 2vw, 2.2rem);
       }
     }
     &-img {
@@ -1455,6 +1471,7 @@ footer {
   }
 
   .headquarters {
+    width: 80%;
     h2 {
       margin-bottom: 3em;
     }
@@ -1477,6 +1494,9 @@ footer {
       font-size: clamp(3.5rem, 5vw, 5rem);
       margin: 0.5em 0 0.3em 0;
       line-height: 1.2;
+    }
+    p {
+      max-width: 25em;
     }
   }
 
