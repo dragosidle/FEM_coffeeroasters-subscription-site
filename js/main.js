@@ -7,29 +7,20 @@ hamburgerBtn.addEventListener('click', () => {
   mobileMenu.classList.toggle('hidden');
 });
 
-// plan logic
 const choice = document.getElementsByClassName('choice');
 const questions = document.getElementsByClassName('question');
 const answers = document.getElementsByClassName('answers');
 const preview = document.querySelector('.order-preview');
 
-// PLAN CONSTRUCTOR OBJECT
 const plan = {
-  how: ['using Capsule', 'as Filter', 'as Espresso'],
+  how: ['Capsule', 'Filter', 'Espresso'],
   type: ['Single origin', 'Decaf', 'Blended'],
   quantity: ['250g', '500g', '1000g'],
   grind: ['Wholebean', 'Filter', 'Cafetiére'],
   frequency: ['Every week', 'Every 2 weeks', 'Every month'],
 };
 
-// DECLARATION
-// let how = '. . . ';
-// let type = '. . . ';
-// let quantity = '. . . ';
-// let grind = '. . . ';
-// let frequency = '. . . ';
-
-const summarySentence = `“I drink my coffee <span class="custom"id="how">. . . </span>, with a <span class="custom" id="type">. . . </span> type of bean. <span class="custom" id="quantity">. . . </span> <span id="capsule-variation">ground ala <span class="custom" id="grind">. . . </span></span>, sent to me <span class="custom" id="frequency">. . . </span>.”`;
+const summarySentence = `“I drink my coffee <span class="variation" id="using-capsule">using</span> <span class="variation" id="as">as</span> <span class="custom" id="how">. . . </span>, with a <span class="custom" id="type">. . . </span> type of bean. <span class="custom" id="quantity">. . . </span> <span id="capsule-variation">ground ala <span class="custom" id="grind">. . . </span></span>, sent to me <span class="custom" id="frequency">. . . </span>.”`;
 
 const initialSentence = `
 Customize your plan with the <span class="custom" id="scroll-to-constructor">above</span> options then come back to review and confirm.`;
@@ -79,6 +70,14 @@ const monthly = document.getElementById('monthly');
 // QUESTIONS MAP
 const qMap = document.querySelectorAll('.question-map');
 
+const clearMap = function () {
+  for (let i = 0; i < qMap.length; i++) {
+    qMap[i].classList.remove('question-map--checked');
+  }
+};
+
+// function to remove active class from map questions on answer click
+
 // CHOICE OPENER
 for (let i = 0; i < choice.length; i++) {
   qMap[i].addEventListener('click', () => {
@@ -88,12 +87,22 @@ for (let i = 0; i < choice.length; i++) {
     qMap[3].classList.remove('question-map--active');
     qMap[4].classList.remove('question-map--active');
     qMap[i].classList.add('question-map--active');
+    if (preview.children[1].innerHTML === initialSentence) {
+      preview.children[1].innerHTML = summarySentence;
+    }
   });
   questions[i].addEventListener('click', () => {
+    if (!choice[i].children[1].classList.contains('answers--open')) {
+      questions[i].scrollIntoView({ behavior: 'smooth' });
+    }
     choice[i].children[0].classList.toggle('question--open');
     choice[i].children[1].classList.toggle('answers--open');
     if (preview.children[1].innerHTML === initialSentence)
       preview.children[1].innerHTML = summarySentence;
+  });
+  qMap[i].addEventListener('click', () => {
+    questions[i].scrollIntoView({ behavior: 'smooth' });
+    choice[i].children[1].classList.add('answers--open');
   });
 }
 
@@ -103,6 +112,8 @@ capsule.addEventListener('click', () => {
   document.getElementById('capsule-variation').classList.add('variation');
   document.getElementById('grind').textContent = '';
   sentenceModifier(`how`, plan.how[0]);
+  document.getElementById('using-capsule').classList.remove('variation');
+  document.getElementById('as').classList.add('variation');
   filter.classList.remove('answer--active');
   espresso.classList.remove('answer--active');
   capsule.classList.add('answer--active');
@@ -121,6 +132,8 @@ capsule.addEventListener('click', () => {
 filter.addEventListener('click', () => {
   document.getElementById('capsule-variation').classList.remove('variation');
   sentenceModifier('how', plan.how[1]);
+  document.getElementById('using-capsule').classList.add('variation');
+  document.getElementById('as').classList.remove('variation');
   filter.classList.add('answer--active');
   espresso.classList.remove('answer--active');
   capsule.classList.remove('answer--active');
@@ -131,6 +144,8 @@ filter.addEventListener('click', () => {
 });
 
 espresso.addEventListener('click', () => {
+  document.getElementById('using-capsule').classList.add('variation');
+  document.getElementById('as').classList.remove('variation');
   document.getElementById('capsule-variation').classList.remove('variation');
   sentenceModifier('how', plan.how[2]);
   filter.classList.remove('answer--active');
@@ -226,6 +241,9 @@ cafetiere.addEventListener('click', () => {
 });
 
 // FREQUENCY
+
+// shipping price calculator goes here
+
 weekly.addEventListener('click', () => {
   sentenceModifier('frequency', plan.frequency[0]);
   weekly.classList.add('answer--active');
@@ -252,3 +270,9 @@ monthly.addEventListener('click', () => {
   qMap[4].classList.add('question-map--checked');
   qMap[4].classList.remove('question-map--active');
 });
+
+///////// NU STIU DE CE NU MERGE
+// document.getElementById('how').addEventListener('click', () => {
+//   choice[0].scrollIntoView({ behavior: 'smooth' });
+//   console.log(`fucking scrolled`);
+// });
