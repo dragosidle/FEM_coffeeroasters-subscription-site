@@ -7,33 +7,48 @@ hamburgerBtn.addEventListener('click', () => {
   mobileMenu.classList.toggle('hidden');
 });
 
-// PLAN CONSTRUCTOR OBJECT
-
-const plan = {
-  how: ['using Capsule', 'as Filter', 'as Espresso'],
-  type: ['single origin', 'decaf', 'blended'],
-  quantity: ['250g', '500g', '1000g'],
-  grind: ['wholebean', 'filter', 'cafetiére'],
-  frequency: ['every week', 'every 2 weeks', 'every month'],
-};
-
 // plan logic
 const choice = document.getElementsByClassName('choice');
 const questions = document.getElementsByClassName('question');
 const answers = document.getElementsByClassName('answers');
 const preview = document.querySelector('.order-preview');
 
+// PLAN CONSTRUCTOR OBJECT
+const plan = {
+  how: ['using Capsule', 'as Filter', 'as Espresso'],
+  type: ['Single origin', 'Decaf', 'Blended'],
+  quantity: ['250g', '500g', '1000g'],
+  grind: ['Wholebean', 'Filter', 'Cafetiére'],
+  frequency: ['Every week', 'Every 2 weeks', 'Every month'],
+};
+
 // DECLARATION
+// let how = '. . . ';
+// let type = '. . . ';
+// let quantity = '. . . ';
+// let grind = '. . . ';
+// let frequency = '. . . ';
+
+const summarySentence = `“I drink my coffee <span class="custom"id="how">. . . </span>, with a <span class="custom" id="type">. . . </span> type of bean. <span class="custom" id="quantity">. . . </span> <span id="capsule-variation">ground ala <span class="custom" id="grind">. . . </span></span>, sent to me <span class="custom" id="frequency">. . . </span>.”`;
+
 const initialSentence = `
-Customize your plan with the <span id="scroll-to-constructor">above</span> options then come back to review and confirm.`;
+Customize your plan with the <span class="custom" id="scroll-to-constructor">above</span> options then come back to review and confirm.`;
 
-const summarySentence = `“I drink my coffee <span id="how">. . . </span>, with a <span id="type">. . . </span> type of bean. <span id="quantity">. . . </span> ground ala <span id="grind">. . . </span>, sent to me <span id="frequency">. . . </
-span>.”`;
-
-const capsuleSentence = `“I drink my coffee <span id="how">. . . </span>, with a <span id="type">. . . </span> type of bean. <span id="quantity">. . . </span> sent to me <span id="frequency">. . . </
-span>.”`;
+const sentenceModifier = function (option, value) {
+  document.getElementById(option).textContent = value;
+};
 
 preview.children[1].innerHTML = initialSentence;
+
+// scroll to plan constructor
+document
+  .getElementById('scroll-to-constructor')
+  .addEventListener('click', () => {
+    document.getElementById('options').scrollIntoView({ behavior: 'smooth' });
+    choice[0].children[0].classList.toggle('question--open');
+    choice[0].children[1].classList.toggle('answers--open');
+    preview.children[1].innerHTML = summarySentence;
+  });
 
 // OPTIONS
 // how
@@ -61,9 +76,33 @@ const weekly = document.getElementById('weekly');
 const twoWeeks = document.getElementById('twoWeeks');
 const monthly = document.getElementById('monthly');
 
+// QUESTIONS MAP
+const qMap = document.querySelectorAll('.question-map');
+
+// CHOICE OPENER
+for (let i = 0; i < choice.length; i++) {
+  qMap[i].addEventListener('click', () => {
+    qMap[0].classList.remove('question-map--active');
+    qMap[1].classList.remove('question-map--active');
+    qMap[2].classList.remove('question-map--active');
+    qMap[3].classList.remove('question-map--active');
+    qMap[4].classList.remove('question-map--active');
+    qMap[i].classList.add('question-map--active');
+  });
+  questions[i].addEventListener('click', () => {
+    choice[i].children[0].classList.toggle('question--open');
+    choice[i].children[1].classList.toggle('answers--open');
+    if (preview.children[1].innerHTML === initialSentence)
+      preview.children[1].innerHTML = summarySentence;
+  });
+}
+
 // PREVIEW MESSAGE BUILDER
 // HOW
 capsule.addEventListener('click', () => {
+  document.getElementById('capsule-variation').classList.add('variation');
+  document.getElementById('grind').textContent = '';
+  sentenceModifier(`how`, plan.how[0]);
   filter.classList.remove('answer--active');
   espresso.classList.remove('answer--active');
   capsule.classList.add('answer--active');
@@ -73,199 +112,143 @@ capsule.addEventListener('click', () => {
   choice[3].children[0].classList.add('question--disabled');
   choice[3].children[1].classList.remove('answers--open');
   choice[3].children[0].classList.remove('question--open');
-  if (preview.children[1].innerHTML == initialSentence || summarySentence) {
-    preview.children[1].innerHTML = capsuleSentence;
-    document.getElementById('how').textContent = plan.how[0];
-  } else {
-    document.getElementById('how').textContent = plan.how[0];
-  }
+  qMap[0].classList.add('question-map--checked');
+  qMap[0].classList.remove('question-map--active');
+  qMap[3].classList.add('question-map--disabled');
+  qMap[3].classList.remove('question-map--checked');
 });
 
 filter.addEventListener('click', () => {
+  document.getElementById('capsule-variation').classList.remove('variation');
+  sentenceModifier('how', plan.how[1]);
   filter.classList.add('answer--active');
   espresso.classList.remove('answer--active');
   capsule.classList.remove('answer--active');
   choice[3].children[0].classList.remove('question--disabled');
-  if (preview.children[1].innerHTML == initialSentence || capsuleSentence) {
-    preview.children[1].innerHTML = summarySentence;
-    document.getElementById('how').textContent = plan.how[1];
-  } else {
-    document.getElementById('how').textContent = plan.how[1];
-  }
+  qMap[0].classList.add('question-map--checked');
+  qMap[0].classList.remove('question-map--active');
+  qMap[3].classList.remove('question-map--disabled');
 });
 
 espresso.addEventListener('click', () => {
+  document.getElementById('capsule-variation').classList.remove('variation');
+  sentenceModifier('how', plan.how[2]);
   filter.classList.remove('answer--active');
   espresso.classList.add('answer--active');
   capsule.classList.remove('answer--active');
-  if (preview.children[1].innerHTML == initialSentence || capsuleSentence) {
-    preview.children[1].innerHTML = summarySentence;
-    document.getElementById('how').textContent = plan.how[2];
-  } else {
-    document.getElementById('how').textContent = plan.how[2];
-  }
+  qMap[0].classList.add('question-map--checked');
+  qMap[0].classList.remove('question-map--active');
+  qMap[3].classList.remove('question-map--disabled');
 });
 
 // TYPE
 origin.addEventListener('click', () => {
+  sentenceModifier('type', plan.type[0]);
   origin.classList.add('answer--active');
   decaf.classList.remove('answer--active');
   blended.classList.remove('answer--active');
-  if (preview.children[1].innerHTML == initialSentence) {
-    preview.children[1].innerHTML = summarySentence;
-    document.getElementById('type').textContent = plan.type[0];
-  } else {
-    document.getElementById('type').textContent = plan.type[0];
-  }
+  qMap[1].classList.add('question-map--checked');
+  qMap[1].classList.remove('question-map--active');
 });
 
 decaf.addEventListener('click', () => {
+  sentenceModifier('type', plan.type[1]);
   origin.classList.remove('answer--active');
   decaf.classList.add('answer--active');
   blended.classList.remove('answer--active');
-  if (preview.children[1].innerHTML == initialSentence) {
-    preview.children[1].innerHTML = summarySentence;
-    document.getElementById('type').textContent = plan.type[1];
-  } else {
-    document.getElementById('type').textContent = plan.type[1];
-  }
+  qMap[1].classList.add('question-map--checked');
+  qMap[1].classList.remove('question-map--active');
 });
 
 blended.addEventListener('click', () => {
+  sentenceModifier('type', plan.type[2]);
   origin.classList.remove('answer--active');
   decaf.classList.remove('answer--active');
   blended.classList.add('answer--active');
-  if (preview.children[1].innerHTML == initialSentence) {
-    preview.children[1].innerHTML = summarySentence;
-    document.getElementById('type').textContent = plan.type[2];
-  } else {
-    document.getElementById('type').textContent = plan.type[2];
-  }
+  qMap[1].classList.add('question-map--checked');
+  qMap[1].classList.remove('question-map--active');
 });
 
 // QUANTITY
 small.addEventListener('click', () => {
+  sentenceModifier('quantity', plan.quantity[0]);
   small.classList.add('answer--active');
   medium.classList.remove('answer--active');
   large.classList.remove('answer--active');
-  if (preview.children[1].innerHTML == initialSentence) {
-    preview.children[1].innerHTML = summarySentence;
-    document.getElementById('quantity').textContent = plan.quantity[0];
-  } else {
-    document.getElementById('quantity').textContent = plan.quantity[0];
-  }
+  qMap[2].classList.add('question-map--checked');
+  qMap[2].classList.remove('question-map--active');
 });
 
 medium.addEventListener('click', () => {
+  sentenceModifier('quantity', plan.quantity[1]);
   small.classList.remove('answer--active');
   medium.classList.add('answer--active');
   large.classList.remove('answer--active');
-  if (preview.children[1].innerHTML == initialSentence) {
-    preview.children[1].innerHTML = summarySentence;
-    document.getElementById('quantity').textContent = plan.quantity[1];
-  } else {
-    document.getElementById('quantity').textContent = plan.quantity[1];
-  }
+  qMap[2].classList.add('question-map--checked');
+  qMap[2].classList.remove('question-map--active');
 });
 
 large.addEventListener('click', () => {
+  sentenceModifier('quantity', plan.quantity[2]);
   small.classList.remove('answer--active');
   medium.classList.remove('answer--active');
   large.classList.add('answer--active');
-  if (preview.children[1].innerHTML == initialSentence) {
-    preview.children[1].innerHTML = summarySentence;
-    document.getElementById('quantity').textContent = plan.quantity[2];
-  } else {
-    document.getElementById('quantity').textContent = plan.quantity[2];
-  }
+  qMap[2].classList.add('question-map--checked');
+  qMap[2].classList.remove('question-map--active');
 });
 
 // GRIND?
 wholebean.addEventListener('click', () => {
+  sentenceModifier('grind', plan.grind[0]);
   wholebean.classList.add('answer--active');
   grindFilter.classList.remove('answer--active');
   cafetiere.classList.remove('answer--active');
-  if (preview.children[1].innerHTML == initialSentence) {
-    preview.children[1].innerHTML = summarySentence;
-    document.getElementById('grind').textContent = plan.grind[0];
-  } else {
-    document.getElementById('grind').textContent = plan.grind[0];
-  }
+  qMap[3].classList.add('question-map--checked');
+  qMap[3].classList.remove('question-map--active');
 });
 
 grindFilter.addEventListener('click', () => {
+  sentenceModifier('grind', plan.grind[1]);
   wholebean.classList.remove('answer--active');
   grindFilter.classList.add('answer--active');
   cafetiere.classList.remove('answer--active');
-  if (preview.children[1].innerHTML == initialSentence) {
-    preview.children[1].innerHTML = summarySentence;
-    document.getElementById('grind').textContent = plan.grind[1];
-  } else {
-    document.getElementById('grind').textContent = plan.grind[1];
-  }
+  qMap[3].classList.add('question-map--checked');
+  qMap[3].classList.remove('question-map--active');
 });
 
 cafetiere.addEventListener('click', () => {
+  sentenceModifier('grind', plan.grind[2]);
   wholebean.classList.remove('answer--active');
   grindFilter.classList.remove('answer--active');
   cafetiere.classList.add('answer--active');
-  if (preview.children[1].innerHTML == initialSentence) {
-    preview.children[1].innerHTML = summarySentence;
-    document.getElementById('grind').textContent = plan.grind[2];
-  } else {
-    document.getElementById('grind').textContent = plan.grind[2];
-  }
+  qMap[3].classList.add('question-map--checked');
+  qMap[3].classList.remove('question-map--active');
 });
 
 // FREQUENCY
-
 weekly.addEventListener('click', () => {
+  sentenceModifier('frequency', plan.frequency[0]);
   weekly.classList.add('answer--active');
   twoWeeks.classList.remove('answer--active');
   monthly.classList.remove('answer--active');
-  if (preview.children[1].innerHTML == initialSentence) {
-    preview.children[1].innerHTML = summarySentence;
-    document.getElementById('frequency').textContent = plan.frequency[0];
-  } else {
-    document.getElementById('frequency').textContent = plan.frequency[0];
-  }
+  qMap[4].classList.add('question-map--checked');
+  qMap[4].classList.remove('question-map--active');
 });
 
 twoWeeks.addEventListener('click', () => {
+  sentenceModifier('frequency', plan.frequency[1]);
   weekly.classList.remove('answer--active');
   twoWeeks.classList.add('answer--active');
   monthly.classList.remove('answer--active');
-  if (preview.children[1].innerHTML == initialSentence) {
-    preview.children[1].innerHTML = summarySentence;
-    document.getElementById('frequency').textContent = plan.frequency[1];
-  } else {
-    document.getElementById('frequency').textContent = plan.frequency[1];
-  }
+  qMap[4].classList.add('question-map--checked');
+  qMap[4].classList.remove('question-map--active');
 });
 
 monthly.addEventListener('click', () => {
+  sentenceModifier('frequency', plan.frequency[2]);
   weekly.classList.remove('answer--active');
   twoWeeks.classList.remove('answer--active');
   monthly.classList.add('answer--active');
-  if (preview.children[1].innerHTML == initialSentence) {
-    preview.children[1].innerHTML = summarySentence;
-    document.getElementById('frequency').textContent = plan.frequency[2];
-  } else {
-    document.getElementById('frequency').textContent = plan.frequency[2];
-  }
+  qMap[4].classList.add('question-map--checked');
+  qMap[4].classList.remove('question-map--active');
 });
-
-// CHOICE OPENER
-for (let i = 0; i < choice.length; i++) {
-  questions[i].addEventListener('click', () => {
-    choice[i].children[0].classList.toggle('question--open');
-    choice[i].children[1].classList.toggle('answers--open');
-  });
-}
-
-// scroll to plan constructor
-document
-  .getElementById('scroll-to-constructor')
-  .addEventListener('click', () => {
-    document.getElementById('options').scrollIntoView({ behavior: 'smooth' });
-  });

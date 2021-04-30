@@ -733,7 +733,7 @@ footer {
 }
 
 .order-overview {
-  padding-top: 10em;
+  padding-top: 5em;
   button {
     user-select: none;
     display: flex;
@@ -771,7 +771,7 @@ footer {
     font-size: 1.5rem;
     line-height: 1.6;
   }
-  span {
+  .custom {
     color: #0e8684;
     transition: 100ms color;
     &:hover {
@@ -779,6 +779,12 @@ footer {
       color: #0f9693;
     }
   }
+}
+
+.variation {
+  display: none;
+  user-select: none;
+  pointer-events: none;
 }
 
 .modal {
@@ -897,7 +903,7 @@ footer {
 
   .options {
     margin: 0 auto;
-    width: clamp(20em, 100%, 50em);
+    width: clamp(20em, 90%, 120em);
   }
 
   footer {
@@ -934,6 +940,7 @@ footer {
   }
 
   .all-steps {
+    position: relative;
     max-width: 90%;
     padding: 6em 7vw;
     transition: 300ms width ease-in-out;
@@ -1283,6 +1290,13 @@ footer {
     height: 80px;
   }
 
+  .options {
+    position: relative;
+    top: -430px;
+    margin: 0 0 0 auto;
+    width: clamp(20em, 70%, 50em);
+  }
+
   .card--great--coffee {
     width: 80%;
     padding: 5em 6em;
@@ -1544,11 +1558,13 @@ footer {
   }
 
   .questions-map {
+    position: sticky;
+    top: 100px;
     user-select: none;
     display: flex;
-    min-width: 300px;
+    width: clamp(300px, 2vw, 500px);
     flex-direction: column;
-    margin: 0 3em 0 0;
+    margin: 200px auto 0 10%;
   }
 
   .separator {
@@ -1557,11 +1573,36 @@ footer {
     background-color: #adb0b241;
   }
 
-  .question-map1,
-  .question-map2,
-  .question-map3,
-  .question-map4,
-  .question-map5 {
+  .question-map--disabled {
+    user-select: none;
+    pointer-events: none;
+    h2 {
+      color: #d5d5d4 !important;
+    }
+    h3 {
+      color: #e5e5e2 !important;
+    }
+  }
+
+  .question-map--checked {
+    h3 {
+      color: #9ecdc9 !important;
+    }
+    h2 {
+      color: #adb0b2;
+    }
+  }
+
+  .question-map--active {
+    h2 {
+      color: #333d4b !important;
+    }
+    h3 {
+      color: #83888f !important;
+    }
+  }
+
+  .question-map {
     cursor: pointer;
     display: flex;
     margin: 1.2em 0;
@@ -1587,7 +1628,6 @@ footer {
   }
 
   .questions-section {
-    position: relative;
     display: flex;
     max-width: 80%;
     margin: 0 auto;
@@ -1605,7 +1645,10 @@ footer {
   }
 
   .order-preview {
-    width: 70%;
+    width: 100%;
     margin: 0 0 0 auto;
+    h3 {
+      font-weight: 600;
+    }
   }
 }
