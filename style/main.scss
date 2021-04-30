@@ -490,6 +490,9 @@ body {
 
 // accordion disabled
 .question--disabled {
+  user-select: none;
+  pointer-events: none;
+  cursor: auto;
   svg {
     fill: #86c2c1 !important;
   }
@@ -498,19 +501,20 @@ body {
   }
 }
 
-// .question--opened {
-// }
-
 .choice {
   display: flex;
   flex-direction: column;
   width: 90%;
-  margin: 1em 0 1em auto;
+  margin: 2em 0 1em auto;
   .question {
+    user-select: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 0 3em 0;
+    svg {
+      transition: 300ms fill;
+    }
     &:hover {
       h1 {
         color: #9398a0;
@@ -518,6 +522,7 @@ body {
       cursor: pointer;
       .arrow-wrap {
         svg {
+          transition: 300ms fill;
           fill: #66d2cf;
         }
       }
@@ -541,14 +546,33 @@ body {
         width: 20px;
         height: 20px;
         fill: #0e8784;
-        transition: 300ms fill;
+        transition: 200ms transform;
       }
     }
   }
 
+  .question--open {
+    .arrow-wrap {
+      svg {
+        transform: rotate(180deg);
+        transition: 200ms transform;
+      }
+    }
+  }
+
+  .answers--open {
+    display: flex !important;
+    max-height: 50em !important;
+    transition: max-height 200ms ease-in;
+  }
+
   .answers {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 200ms ease-out;
+    user-select: none;
     margin: 0 0 5em 0;
-    display: flex;
+    display: none;
     flex-direction: column;
   }
 
@@ -961,6 +985,14 @@ footer {
     }
   }
 
+  .answer--active {
+    background-color: #0e8684 !important;
+    p,
+    h3 {
+      color: white !important;
+    }
+  }
+
   .quality {
     margin: 50vw auto 10em auto;
     padding: 20vw 1.5em 4em 1.5em;
@@ -1256,8 +1288,8 @@ footer {
     padding: 5em 6em;
     background-image: url('../assets/home/desktop/image-hero-coffeepress.jpg');
     h1 {
-      width: clamp(6ch, 60%, 10em);
-      font-size: clamp(1rem, 12vw, 4rem);
+      width: clamp(6ch, 60%, 8em);
+      font-size: clamp(1rem, 4vw, 4rem);
     }
     p {
       margin: 2em 0;
@@ -1491,7 +1523,8 @@ footer {
     max-width: 80%;
     background-image: url('../assets/plan/desktop/image-hero-blackcup.jpg');
     h1 {
-      font-size: clamp(3.5rem, 5vw, 5rem);
+      font-size: clamp(3.5rem, 4vw, 4.5rem);
+      width: 8em;
       margin: 0.5em 0 0.3em 0;
       line-height: 1.2;
     }
@@ -1511,6 +1544,7 @@ footer {
   }
 
   .questions-map {
+    user-select: none;
     display: flex;
     min-width: 300px;
     flex-direction: column;
@@ -1553,6 +1587,7 @@ footer {
   }
 
   .questions-section {
+    position: relative;
     display: flex;
     max-width: 80%;
     margin: 0 auto;
@@ -1565,12 +1600,12 @@ footer {
   .order-overview {
     padding: 2em 0 0 0;
     button {
-      margin: 3em 5em 0 auto;
+      margin: 3em 0 0 auto;
     }
   }
 
   .order-preview {
-    width: 50%;
-    margin: 0 5em 0 auto;
+    width: 70%;
+    margin: 0 0 0 auto;
   }
 }
