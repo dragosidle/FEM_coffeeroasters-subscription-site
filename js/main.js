@@ -10,6 +10,7 @@ hamburgerBtn.addEventListener('click', () => {
 const choice = document.getElementsByClassName('choice');
 const questions = document.getElementsByClassName('question');
 const answers = document.getElementsByClassName('answers');
+const individualAnswer = document.getElementsByClassName('answer');
 const preview = document.querySelector('.order-preview');
 
 const plan = {
@@ -20,10 +21,10 @@ const plan = {
   frequency: ['Every week', 'Every 2 weeks', 'Every month'],
 };
 
-const summarySentence = `“I drink my coffee <span class="variation" id="using-capsule">using</span> <span class="variation" id="as">as</span> <span class="custom" id="how">. . . </span>, with a <span class="custom" id="type">. . . </span> type of bean. <span class="custom" id="quantity">. . . </span> <span id="capsule-variation">ground ala <span class="custom" id="grind">. . . </span></span>, sent to me <span class="custom" id="frequency">. . . </span>.”`;
-
 const initialSentence = `
 Customize your plan with the <span class="custom" id="scroll-to-constructor">above</span> options then come back to review and confirm.`;
+
+const summarySentence = `“I drink my coffee <span class="variation" id="using-capsule">using</span> <span class="variation" id="as">as</span> <span class="custom" id="how">. . . </span>, with a <span class="custom" id="type">. . . </span> type of bean. <span class="custom" id="quantity">. . . </span> <span id="capsule-variation">ground ala </span><span class="custom" id="grind">. . . </span>, sent to me <span class="custom" id="frequency">. . . </span>.”`;
 
 const sentenceModifier = function (option, value) {
   document.getElementById(option).textContent = value;
@@ -31,7 +32,7 @@ const sentenceModifier = function (option, value) {
 
 preview.children[1].innerHTML = initialSentence;
 
-// scroll to plan constructor
+// **scroll to plan constructor**
 document
   .getElementById('scroll-to-constructor')
   .addEventListener('click', () => {
@@ -41,7 +42,7 @@ document
     preview.children[1].innerHTML = summarySentence;
   });
 
-// OPTIONS
+// OPTIONS selection
 // how
 const capsule = document.getElementById('capsule');
 const filter = document.getElementById('filter');
@@ -57,6 +58,25 @@ const small = document.getElementById('250');
 const medium = document.getElementById('500');
 const large = document.getElementById('1000');
 
+// SHIPMENT PRICE UPDATER
+small.addEventListener('click', () => {
+  document.getElementById('weekly-price').textContent = '$7.20';
+  document.getElementById('biweekly-price').textContent = '$9.60';
+  document.getElementById('monthly-price').textContent = '$12.00';
+});
+
+medium.addEventListener('click', () => {
+  document.getElementById('weekly-price').textContent = '$13.00';
+  document.getElementById('biweekly-price').textContent = '$17.50';
+  document.getElementById('monthly-price').textContent = '$22.00';
+});
+
+large.addEventListener('click', () => {
+  document.getElementById('weekly-price').textContent = '$22.00';
+  document.getElementById('biweekly-price').textContent = '$32.00';
+  document.getElementById('monthly-price').textContent = '$42.00';
+});
+
 // grind
 const wholebean = document.getElementById('wholebean');
 const grindFilter = document.getElementById('grindFilter');
@@ -67,16 +87,18 @@ const weekly = document.getElementById('weekly');
 const twoWeeks = document.getElementById('twoWeeks');
 const monthly = document.getElementById('monthly');
 
-// QUESTIONS MAP
+// QUESTIONS MAP + clear active class on each answer click
 const qMap = document.querySelectorAll('.question-map');
 
 const clearMap = function () {
   for (let i = 0; i < qMap.length; i++) {
-    qMap[i].classList.remove('question-map--checked');
+    qMap[i].classList.remove('question-map--active');
   }
 };
 
-// function to remove active class from map questions on answer click
+for (let i = 0; i < individualAnswer.length; i++) {
+  individualAnswer[i].addEventListener('click', clearMap);
+}
 
 // CHOICE OPENER
 for (let i = 0; i < choice.length; i++) {
@@ -109,8 +131,9 @@ for (let i = 0; i < choice.length; i++) {
 // PREVIEW MESSAGE BUILDER
 // HOW
 capsule.addEventListener('click', () => {
+  document.getElementById('grind').classList.add('variation');
+  document.getElementById('grind').textContent = '. . . ';
   document.getElementById('capsule-variation').classList.add('variation');
-  document.getElementById('grind').textContent = '';
   sentenceModifier(`how`, plan.how[0]);
   document.getElementById('using-capsule').classList.remove('variation');
   document.getElementById('as').classList.add('variation');
@@ -130,6 +153,7 @@ capsule.addEventListener('click', () => {
 });
 
 filter.addEventListener('click', () => {
+  document.getElementById('grind').classList.remove('variation');
   document.getElementById('capsule-variation').classList.remove('variation');
   sentenceModifier('how', plan.how[1]);
   document.getElementById('using-capsule').classList.add('variation');
@@ -144,6 +168,7 @@ filter.addEventListener('click', () => {
 });
 
 espresso.addEventListener('click', () => {
+  document.getElementById('grind').classList.remove('variation');
   document.getElementById('using-capsule').classList.add('variation');
   document.getElementById('as').classList.remove('variation');
   document.getElementById('capsule-variation').classList.remove('variation');

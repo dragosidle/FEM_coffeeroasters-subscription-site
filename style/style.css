@@ -673,6 +673,9 @@ nav img {
   max-height: 50em !important;
   transition: max-height 200ms ease-in;
 }
+.choice .invisible {
+  opacity: 0;
+}
 .choice .answers {
   max-height: 0;
   overflow: hidden;
@@ -704,6 +707,14 @@ nav img {
   line-height: 1.5;
   font-family: "Barlow", sans-serif;
   color: #333d4b;
+}
+
+.answer--active {
+  background-color: #0e8684 !important;
+}
+.answer--active p,
+.answer--active h3 {
+  color: white !important;
 }
 
 .disabled {
@@ -887,8 +898,6 @@ footer a:hover {
 
 .variation {
   display: none;
-  user-select: none;
-  pointer-events: none;
 }
 
 .modal {
@@ -1084,14 +1093,6 @@ footer a:hover {
   }
   .answer h3 {
     font-size: clamp(0.8rem, 4vw, 1.8rem) !important;
-  }
-
-  .answer--active {
-    background-color: #0e8684 !important;
-  }
-  .answer--active p,
-.answer--active h3 {
-    color: white !important;
   }
 
   .quality {
@@ -1664,9 +1665,6 @@ footer a:hover {
 
   .question-map--active h2 {
     color: #333d4b !important;
-  }
-  .question-map--active h3 {
-    color: #83888f !important;
   }
 
   .question-map {

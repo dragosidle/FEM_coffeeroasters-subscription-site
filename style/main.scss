@@ -565,6 +565,10 @@ body {
     transition: max-height 200ms ease-in;
   }
 
+  .invisible {
+    opacity: 0;
+  }
+
   .answers {
     max-height: 0;
     overflow: hidden;
@@ -597,6 +601,14 @@ body {
       font-family: 'Barlow', sans-serif;
       color: #333d4b;
     }
+  }
+}
+
+.answer--active {
+  background-color: #0e8684 !important;
+  p,
+  h3 {
+    color: white !important;
   }
 }
 
@@ -781,8 +793,6 @@ footer {
 
 .variation {
   display: none;
-  user-select: none;
-  pointer-events: none;
 }
 
 .modal {
@@ -986,14 +996,6 @@ footer {
     }
     h3 {
       font-size: clamp(0.8rem, 4vw, 1.8rem) !important;
-    }
-  }
-
-  .answer--active {
-    background-color: #0e8684 !important;
-    p,
-    h3 {
-      color: white !important;
     }
   }
 
@@ -1594,9 +1596,9 @@ footer {
     h2 {
       color: #333d4b !important;
     }
-    h3 {
-      color: #83888f !important;
-    }
+    // h3 {
+    //   color: #83888f !important;
+    // }
   }
 
   .question-map {
