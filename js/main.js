@@ -1,12 +1,3 @@
-// navbar
-const hamburgerBtn = document.getElementById('hamburger');
-const mobileMenu = document.querySelector('.modal-menu');
-
-hamburgerBtn.addEventListener('click', () => {
-  hamburgerBtn.classList.toggle('open');
-  mobileMenu.classList.toggle('hidden');
-});
-
 const choice = document.getElementsByClassName('choice');
 const questions = document.getElementsByClassName('question');
 const answers = document.getElementsByClassName('answers');
@@ -20,18 +11,15 @@ checkoutPlan.addEventListener('click', () => {
   document.querySelector('#overlay').classList.add('hidden');
 });
 
-// weekly x4
-// biweekly x2
-// monthly x1
-let multiplier = 2;
-let priceToMultiply = 2;
+let multiplier;
+let priceMod = 10;
 
 createPlan.addEventListener('click', () => {
-  checkoutPrice(multiplier, priceToMultiply);
   document.getElementById('modal-summary').innerHTML =
     preview.children[1].innerHTML;
   document.querySelector('.modal').classList.remove('hidden');
   document.querySelector('#overlay').classList.remove('hidden');
+  checkoutPrice(multiplier, priceMod);
 });
 
 const checkoutPrice = function (freq, weight) {
@@ -107,6 +95,13 @@ const price = document.getElementsByClassName('price');
 const weeklyPrice = document.getElementById('weekly-price');
 const biweeklyPrice = document.getElementById('biweekly-price');
 const monthlyPrice = document.getElementById('monthly-price');
+
+const clearClass = function () {
+  qMap[4].classList.remove('question-map--checked');
+  weekly.classList.remove('answer--active');
+  twoWeeks.classList.remove('answer--active');
+  monthly.classList.remove('answer--active');
+};
 
 const priceReveal = function () {
   for (let i = 0; i < price.length; i++) {
@@ -271,36 +266,48 @@ blended.addEventListener('click', () => {
 
 // QUANTITY
 small.addEventListener('click', () => {
+  deliveries = false;
   quantity = true;
   checkPlan();
-  multiplier = 4;
   sentenceModifier('quantity', plan.quantity[0]);
   small.classList.add('answer--active');
   medium.classList.remove('answer--active');
   large.classList.remove('answer--active');
   qMap[2].classList.add('question-map--checked');
+  qMap[4].classList.remove('question-map--disabled');
+  choice[4].children[0].classList.remove('question--disabled');
+  priceMod = weeklyPrice.textContent;
+  clearClass();
 });
 
 medium.addEventListener('click', () => {
+  deliveries = false;
   quantity = true;
   checkPlan();
-  multiplier = 2;
   sentenceModifier('quantity', plan.quantity[1]);
   small.classList.remove('answer--active');
   medium.classList.add('answer--active');
   large.classList.remove('answer--active');
   qMap[2].classList.add('question-map--checked');
+  qMap[4].classList.remove('question-map--disabled');
+  choice[4].children[0].classList.remove('question--disabled');
+  priceMod = biweeklyPrice.textContent;
+  clearClass();
 });
 
 large.addEventListener('click', () => {
+  deliveries = false;
   quantity = true;
   checkPlan();
-  multiplier = 1;
   sentenceModifier('quantity', plan.quantity[2]);
   small.classList.remove('answer--active');
   medium.classList.remove('answer--active');
   large.classList.add('answer--active');
   qMap[2].classList.add('question-map--checked');
+  qMap[4].classList.remove('question-map--disabled');
+  choice[4].children[0].classList.remove('question--disabled');
+  priceMod = monthlyPrice.textContent;
+  clearClass();
 });
 
 // GRIND?
@@ -346,7 +353,8 @@ weekly.addEventListener('click', () => {
   twoWeeks.classList.remove('answer--active');
   monthly.classList.remove('answer--active');
   qMap[4].classList.add('question-map--checked');
-  priceToMultiply = weeklyPrice.innerText;
+  multiplier = 4;
+  priceMod = weeklyPrice.textContent;
 });
 
 twoWeeks.addEventListener('click', () => {
@@ -357,7 +365,8 @@ twoWeeks.addEventListener('click', () => {
   twoWeeks.classList.add('answer--active');
   monthly.classList.remove('answer--active');
   qMap[4].classList.add('question-map--checked');
-  priceToMultiply = biweeklyPrice.innerText;
+  multiplier = 2;
+  priceMod = biweeklyPrice.textContent;
 });
 
 monthly.addEventListener('click', () => {
@@ -368,7 +377,8 @@ monthly.addEventListener('click', () => {
   twoWeeks.classList.remove('answer--active');
   monthly.classList.add('answer--active');
   qMap[4].classList.add('question-map--checked');
-  priceToMultiply = monthlyPrice.innerText;
+  multiplier = 1;
+  priceMod = monthlyPrice.textContent;
 });
 
 ///////// nu stiu de ce nu merge

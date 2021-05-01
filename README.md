@@ -49,7 +49,6 @@ The interactive subscription page has a number of specific behaviours, which are
     - Every Week price per shipment is $22.00
     - Every 2 Weeks price per shipment is $32.00
     - Every Month price per shipment is $42.00
-    <!--  -->
 - Calculating per month cost for the Order Summary modal
   - If Every Week is selected, the Order Summary modal should show the per shipment price multiplied by 4. For example, if 250g weight is selected, the price would be $28.80/month
   - If Every 2 Weeks is selected, the Order Summary modal should show the per shipment price multiplied by 2. For example, if 250g weight is selected, the price would be $19.20/month
