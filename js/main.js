@@ -59,22 +59,37 @@ const medium = document.getElementById('500');
 const large = document.getElementById('1000');
 
 // SHIPMENT PRICE UPDATER
+
+const invisiblePrice = document.getElementsByClassName('invisible-price');
+const weeklyPrice = document.getElementById('weekly-price');
+const biweeklyPrice = document.getElementById('biweekly-price');
+const monthlyPrice = document.getElementById('monthly-price');
+
+const priceReveal = function () {
+  for (let i = 0; i < invisiblePrice.length; i++) {
+    invisiblePrice[i].classList.remove('invisible-price');
+  }
+};
+
 small.addEventListener('click', () => {
-  document.getElementById('weekly-price').textContent = '$7.20';
-  document.getElementById('biweekly-price').textContent = '$9.60';
-  document.getElementById('monthly-price').textContent = '$12.00';
+  weeklyPrice.textContent = '$7.20';
+  biweeklyPrice.textContent = '$9.60';
+  monthlyPrice.textContent = '$12.00';
+  priceReveal();
 });
 
 medium.addEventListener('click', () => {
-  document.getElementById('weekly-price').textContent = '$13.00';
-  document.getElementById('biweekly-price').textContent = '$17.50';
-  document.getElementById('monthly-price').textContent = '$22.00';
+  weeklyPrice.textContent = '$13.00';
+  biweeklyPrice.textContent = '$17.50';
+  monthlyPrice.textContent = '$22.00';
+  priceReveal();
 });
 
 large.addEventListener('click', () => {
-  document.getElementById('weekly-price').textContent = '$22.00';
-  document.getElementById('biweekly-price').textContent = '$32.00';
-  document.getElementById('monthly-price').textContent = '$42.00';
+  weeklyPrice.textContent = '$22.00';
+  biweeklyPrice.textContent = '$32.00';
+  monthlyPrice.textContent = '$42.00';
+  priceReveal();
 });
 
 // grind

@@ -565,7 +565,7 @@ body {
     transition: max-height 200ms ease-in;
   }
 
-  .invisible {
+  .invisible-price {
     opacity: 0;
   }
 
@@ -799,11 +799,11 @@ footer {
   z-index: 6;
   display: flex;
   flex-direction: column;
-  transform: translate(0, -50%);
+  transform: translate(-50%, -50%);
   top: 50%;
-  left: 5%;
-  right: 5%;
+  left: 50%;
   position: fixed;
+  width: clamp(100px, 80%, 500px);
   border-radius: 0.8em;
   background-color: #fefcf7;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
@@ -814,17 +814,17 @@ footer {
       text-align: center;
       font-family: 'Fraunces', sans-serif;
       color: #fefcf7;
-      font-size: clamp(1rem, 5vw, 3rem);
-      margin: 1em 0.5em;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      margin: 1rem 0.5em;
     }
   }
   &__preview {
     h4 {
       font-family: 'Fraunces', sans-serif;
       color: #83888f;
-      font-size: clamp(1rem, 5vw, 3rem);
+      font-size: clamp(0.8rem, 5vw, 1rem);
       line-height: 1.6;
-      margin: 1em;
+      margin: clamp(1.4em, 4vw, 2em);
     }
     span {
       color: #0e8684;
@@ -842,6 +842,7 @@ footer {
     font-size: 0.8rem;
     line-height: 1.5;
     text-align: center;
+    margin: clamp(1.4em, 4vw, 2em);
   }
   button {
     user-select: none;
@@ -850,7 +851,7 @@ footer {
     padding: 1em 2em;
     border-radius: 0.5rem;
     font-family: 'Fraunces', sans-serif;
-    margin: 1em;
+    margin: 1em auto;
     border: none;
     font-size: 1rem;
     background-color: hsl(179, 81%, 29%);
@@ -867,11 +868,12 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 2em 0;
+  padding: 1em;
   h3 {
     color: #333d4b;
     font-family: 'Fraunces', sans-serif;
-    font-size: 2rem;
+    font-size: clamp(1rem, 6vw, 2rem);
+    margin: 0.2em auto;
   }
 }
 
