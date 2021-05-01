@@ -615,6 +615,7 @@ body {
 .disabled {
   background-color: #e2dedb !important;
   cursor: auto !important;
+  pointer-events: none;
 }
 
 .products {
@@ -1576,7 +1577,7 @@ footer {
 
   .question-map--disabled {
     user-select: none;
-    pointer-events: none;
+    pointer-events: none !important;
     h2 {
       color: #d5d5d4 !important;
     }

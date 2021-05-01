@@ -720,6 +720,7 @@ nav img {
 .disabled {
   background-color: #e2dedb !important;
   cursor: auto !important;
+  pointer-events: none;
 }
 
 .products {
@@ -1649,7 +1650,7 @@ footer a:hover {
 
   .question-map--disabled {
     user-select: none;
-    pointer-events: none;
+    pointer-events: none !important;
   }
   .question-map--disabled h2 {
     color: #d5d5d4 !important;

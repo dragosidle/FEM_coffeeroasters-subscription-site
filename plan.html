@@ -311,16 +311,16 @@
           <h3>
             Every week
           </h3>
-          <p class="invisible-price">
-            <span id="weekly-price"></span> per shipment. Includes free first-class shipping.
+          <p class="price invisible-price">
+            $<span id="weekly-price"></span> per shipment. Includes free first-class shipping.
           </p>
         </div>
         <div id="twoWeeks" class="answer">
           <h3>
             Every 2 weeks
           </h3>
-          <p class="invisible-price">
-            <span id="biweekly-price"></span> per shipment. Includes free priority shipping.
+          <p class="price invisible-price">
+            $<span id="biweekly-price"></span> per shipment. Includes free priority shipping.
           </p>
         </div>
         
@@ -328,8 +328,8 @@
           <h3>
             Every month
           </h3>
-          <p class="invisible-price">
-            <span id="monthly-price"></span> per shipment. Includes free priority shipping.
+          <p class="price invisible-price">
+            $<span id="monthly-price"></span> per shipment. Includes free priority shipping.
           </p>
         </div>
       </div>
@@ -359,8 +359,7 @@
     </h1>
   </div>
   <div class="modal__preview">
-    <h4>
-      “I drink my coffee as <span id="how">Filter</span>, with a <span id="type">Decaf</span> type of bean. <span id="quantity">250g</span> ground ala <span id="grind">Cafetiere</span>, sent to me <span id="frequency">Every Week</span>.”    
+    <h4 id="modal-summary">
     </h4>
     <p>
       Is this correct? You can proceed to checkout or go back to plan selection if something 
@@ -368,10 +367,10 @@
     </p>
   </div>
   <div class="checkout-preview">
-    <h3>$14/mo</h3>
-    <button id="checkout">
-      Checkout
-    </button>
+    <h3>$<span id="checkout-price">lol</span>/mo</h3>
+      <button id="checkout">
+        Checkout
+      </button>
   </div>
 </div>
 <div id="overlay" class="hidden"></div>
