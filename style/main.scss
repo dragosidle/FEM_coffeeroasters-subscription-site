@@ -562,7 +562,7 @@ body {
   .answers--open {
     display: flex !important;
     max-height: 50em !important;
-    transition: max-height 200ms ease-in;
+    transition: max-height 1000ms ease-in;
   }
 
   .invisible-price {

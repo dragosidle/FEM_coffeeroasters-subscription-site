@@ -162,6 +162,7 @@ for (let i = 0; i < choice.length; i++) {
       questions[i].scrollIntoView({ behavior: 'smooth' });
     }
     choice[i].children[0].classList.toggle('question--open');
+    //     choice[i].children[1].style.maxHeight = 50 + "em";
     choice[i].children[1].classList.toggle('answers--open');
     if (preview.children[1].innerHTML === initialSentence)
       preview.children[1].innerHTML = summarySentence;
