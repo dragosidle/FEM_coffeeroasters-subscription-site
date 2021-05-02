@@ -22,9 +22,12 @@ html {
 
 body {
   background-color: #fefcf7;
+  overflow-x: hidden;
+}
+
+main {
   max-width: 2000px;
   margin: 0 auto;
-  overflow-x: hidden;
 }
 
 #overlay {
@@ -1309,7 +1312,7 @@ footer {
   }
 
   .answer {
-    min-height: 350px;
+    min-height: 360px;
   }
 
   .options {
