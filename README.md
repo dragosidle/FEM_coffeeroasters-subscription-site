@@ -1,123 +1,80 @@
-# Frontend Mentor - Coffeeroasters subscription site
+# Frontend Mentor - Coffeeroasters subscription site solution
 
-![Design preview for the Coffeeroasters subscription site coding challenge](./preview.jpg)
+This is a solution to the [Coffeeroasters subscription site challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/coffeeroasters-subscription-site-5Fc26HVY6). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for purchasing this premium Frontend Mentor coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+  <!-- - [My process](#my-process) -->
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects. These premium challenges are perfect portfolio pieces, so please feel free to use what you create in your portfolio to show others.
+## Overview
 
-**To do this challenge, you need a good understanding of HTML, CSS, and JavaScript.**
+This challenge took me exactely 8 days, with 4-5 hours of work daily. I added a few small details such as an overlay behind the modal on the plan page when checking out, some additional styling on the left side map to give a better feedback on the completion progess aswell as some extra effects of my taste. I used a mobile-first approach and imported all the SVG's through a Sprite, a thing I wish a knew about longer before.
 
-## The challenge
+### The challenge
 
-Your challenge is to build out this multi-page coffee subscription website and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to:
+Users should be able to:
 
 - View the optimal layout for each page depending on their device's screen size
 - See hover states for all interactive elements throughout the site
-- Make selections to create a coffee subscription and see an order summary modal of their choices (details provided below)
+- Make selections to create a coffee subscription and see an order summary modal of their choices
 
-### Expected bahaviour
+### Screenshot
 
-The interactive subscription page has a number of specific behaviours, which are listed below:
+![](./coffee_screenshot.png)
 
-- If "Capsule" is selected for the first option
-  - The "Want us to grind them?" section should be disabled and not able to be opened
-- Order summary texts updates
-  - If "Capsule" is selected, update the order summary text to:
-    - "I drink my coffee **using** Capsules"
-    - Remove the grind selection text
-  - If "Filter" or "Espresso" are selected, update the order summary text to:
-    - "I drink my coffee **as** Filter||Espresso"
-    - Keep/Add the grind selection text
-  - For all other selections, add the selection title in the blank space where appropriate
-- Updating per shipment price (shown in "How often should we deliver?" section at the bottom) based on weight selected
-  - If 250g weight is selected
-    - Every Week price per shipment is $7.20
-    - Every 2 Weeks price per shipment is $9.60
-    - Every Month price per shipment is $12.00
-  - If 500g weight is selected
-    - Every Week price per shipment is $13.00
-    - Every 2 Weeks price per shipment is $17.50
-    - Every Month price per shipment is $22.00
-  - If 1000g weight is selected
-    - Every Week price per shipment is $22.00
-    - Every 2 Weeks price per shipment is $32.00
-    - Every Month price per shipment is $42.00
-- Calculating per month cost for the Order Summary modal
-  - If Every Week is selected, the Order Summary modal should show the per shipment price multiplied by 4. For example, if 250g weight is selected, the price would be $28.80/month
-  - If Every 2 Weeks is selected, the Order Summary modal should show the per shipment price multiplied by 2. For example, if 250g weight is selected, the price would be $19.20/month
-  - If Every Month is selected, the Order Summary modal should show the per shipment price multiplied by 1. For example, if 250g weight is selected, the price would be $12.00/month
+### Links
 
-The designs show these differences, so you can refer to them to get an idea of what's needed for the different states.
+- Solution URL: [https://www.frontendmentor.io/solutions/coffee-roasters-KfOk9wBoU]
+- Live Site URL: [chttps://coffeeroast.netlify.app/index.html]
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+### Built with
 
-## Where to find everything
+- Mobile-first workflow
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- Javascript
 
-Your task is to build out the project to the design file provided. We provide both Sketch and Figma versions of the design, so you can choose which tool you prefer to use. You can download the design file on the platform. **Please be sure not to share them with anyone else.** The design download comes with a `README.md` file as well to help you get set up.
+<!-- ### What I learned -->
 
-All the required assets for this project are in the `/assets` folder. The assets are already exported for the correct screen size and optimized. Some images are reusable at multiple screen sizes. So if you don't see an image in a specific folder, it will typically be in another folder for that page.
+<!-- To see how you can add code snippets, see below:
 
-The design system in the design file will give you more information about the various colors, fonts, and styles used in this project.
+```html
+<h1>Some HTML code I'm proud of</h1>
+```
+```css
+.proud-of-this-css {
+  color: papayawhip;
+}
+```
+```js
+const proudOfThisFunc = () => {
+  console.log('🎉')
+}
+``` -->
 
-## Building your project
+### Continued development
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+In the future I will only write my css from mobile to desktop. Doing this I will end up with a more fluid development, less unexpected behaviors and a way cleaner stylesheet. I have to work more on the JS logic that happens behind the scenes. In this one a lot of the 'magic' is based on the DOM, so if you inspect element the price of one card on the plan page and change it to any number you will affect the checkout generated price. I will completely separate the javascript logic from the visual stuff on the next challenges. One aspect that I avoided in my learning journey was transitions. The arrows in the plan page are not rotating naturally, because of this I found myself wasting a lot of time trying to get them to work, they only rotate beautifully when clicking on the left side choices map on desktop view. Weird.
+I'm looking forward to ways of accelerating my workflow and to get a better grip of transitions, otherwise I'm pleased with how it ended up.
 
-1. Separate the `starter-code` from the rest of this project and rename it to something meaningful for you. Initialize the codebase as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/). **⚠️ IMPORTANT ⚠️: There are already a couple of `.gitignore` files in this project. Please do not remove them or change the content of the files. If you create a brand new project, please use the `.gitignore` files provided in your new codebase. This is to avoid the accidental upload of the design files to GitHub. With these premium challenges, please be sure not to share the design files in your GitHub repo. Thanks!**
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+### Useful resources
 
-## Deploying your project
+- [Kevin Powell's Youtube channel](https://www.youtube.com/user/KepowOb) - I can't not credit Kevin, he is amazing! His videos and online resources are the best. If you're in a process of learning/mastering CSS you've surely stumbled across his videos, if not, you must check him out asap. I took a lot of good practices from him including the 'mobile first' type of development which substantially accelerated my workflow on this one.
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+## Author
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+<!-- - Website - [Add your name here](https://www.your-site.com) -->
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
-
-## Create a custom `README.md`
-
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
-
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
-
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
-
-## Submitting your solution
-
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
-
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-**⚠️ IMPORTANT ⚠️: With these premium challenges, please be sure not to upload the design files to GitHub when you're submitting to the platform and sharing it around. If you've created a brand new project, the easiest way to do that is to copy across the `.gitignore` provided in this starter project.**
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack).
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback.
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-**Have fun building!** 🚀
+- Frontend Mentor - [@popescudragos](https://www.frontendmentor.io/profile/popescudragos)
+- Linkedin - [@ospop](https://www.linkedin.com/in/ospop/)
