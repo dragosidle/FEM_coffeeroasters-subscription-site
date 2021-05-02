@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://www.frontendmentor.io/solutions/coffee-roasters-KfOk9wBoU]
-- Live Site URL: [chttps://coffeeroast.netlify.app/index.html]
+- Live Site URL: [https://coffeeroast.netlify.app/index.html]
 
 ### Built with
 
@@ -45,27 +45,28 @@ Users should be able to:
 - Flexbox
 - Javascript
 
-<!-- ### What I learned -->
+### What I learned
 
-<!-- To see how you can add code snippets, see below:
+First time I used a sprite sheet.
+Cool and easy way to get all the benefits of SVG while only making one http request for all the elements on the page.
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<div class="socials">
+  <svg class="icon" role="img">
+    <use xlink:href="sprite.svg#icon-facebook"></use>
+  </svg>
+  <svg class="icon" role="img">
+    <use xlink:href="sprite.svg#icon-instagram"></use>
+  </svg>
+  <svg class="icon" role="img">
+    <use xlink:href="sprite.svg#icon-twitter"></use>
+  </svg>
+</div>
 ```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-``` -->
 
 ### Continued development
 
-In the future I will only write my css from mobile to desktop. Doing this I will end up with a more fluid development, less unexpected behaviors and a way cleaner stylesheet. I have to work more on the JS logic that happens behind the scenes. In this one a lot of the 'magic' is based on the DOM, so if you inspect element the price of one card on the plan page and change it to any number you will affect the checkout generated price. I will completely separate the javascript logic from the visual stuff on the next challenges. One aspect that I avoided in my learning journey was transitions. The arrows in the plan page are not rotating naturally, because of this I found myself wasting a lot of time trying to get them to work, they only rotate beautifully when clicking on the left side choices map on desktop view. Weird.
+In the future I will only write my css from mobile to desktop. Doing this I will end up with a more fluid development, less unexpected behaviors and a way cleaner stylesheet. I have to work more on the JS logic that happens behind the scenes. In this one a lot of the 'magic' is based on the DOM, so if you inspect element the price of one card on the plan page and change it to any number you will affect the checkout generated price. I will completely separate the javascript logic from the visual stuff on the next challenges. One aspect that I have avoided in my learning journey was transitions. The arrows in the plan page are not rotating naturally, because of this I found myself wasting a lot of time trying to get them to work, they only rotate beautifully when clicking on the left side choices map on desktop view. Weird.
 I'm looking forward to ways of accelerating my workflow and to get a better grip of transitions, otherwise I'm pleased with how it ended up.
 
 ### Useful resources
