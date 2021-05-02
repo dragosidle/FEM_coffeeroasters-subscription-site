@@ -565,7 +565,7 @@ body {
   .answers--open {
     display: flex !important;
     max-height: 50em !important;
-    transition: max-height 800ms ease-out;
+    transition: max-height 800ms ease-in;
     // margin: 0 0 2em 0;
   }
 

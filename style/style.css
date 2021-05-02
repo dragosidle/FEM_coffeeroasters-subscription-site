@@ -674,7 +674,7 @@ nav img {
 .choice .answers--open {
   display: flex !important;
   max-height: 50em !important;
-  transition: max-height 800ms ease-out;
+  transition: max-height 800ms ease-in;
 }
 .choice .invisible-price {
   opacity: 0;
