@@ -153,6 +153,8 @@ const qMapActive = function (index) {
 for (let i = 0; i < choice.length; i++) {
   qMap[i].addEventListener('click', () => {
     qMapActive(i);
+    choice[i].children[0].classList.add('question--open');
+    choice[i].children[1].classList.add('answers--open');
     if (preview.children[1].innerHTML === initialSentence) {
       preview.children[1].innerHTML = summarySentence;
     }
@@ -160,9 +162,10 @@ for (let i = 0; i < choice.length; i++) {
   questions[i].addEventListener('click', () => {
     if (!choice[i].children[1].classList.contains('answers--open')) {
       questions[i].scrollIntoView({ behavior: 'smooth' });
+      //     only if the choice is closed, the screen scrolls
     }
     choice[i].children[0].classList.toggle('question--open');
-    //     choice[i].children[1].style.maxHeight = 50 + "em";
+    //     choice[i].children[1].style.maxHeight = 50 + 'em';
     choice[i].children[1].classList.toggle('answers--open');
     if (preview.children[1].innerHTML === initialSentence)
       preview.children[1].innerHTML = summarySentence;

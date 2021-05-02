@@ -12,6 +12,9 @@ html {
 
 body {
   background-color: #fefcf7;
+  max-width: 2000px;
+  margin: 0 auto;
+  overflow-x: hidden;
 }
 
 #overlay {
@@ -666,12 +669,12 @@ nav img {
 }
 .choice .question--open .arrow-wrap svg {
   transform: rotate(180deg);
-  transition: 200ms transform;
+  transition: 500ms transform;
 }
 .choice .answers--open {
   display: flex !important;
   max-height: 50em !important;
-  transition: max-height 1000ms ease-in;
+  transition: max-height 800ms ease-out;
 }
 .choice .invisible-price {
   opacity: 0;
@@ -679,10 +682,9 @@ nav img {
 .choice .answers {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 500ms ease-out;
+  transition: max-height 800ms ease-out;
   user-select: none;
-  margin: 0 0 5em 0;
-  display: none;
+  display: flex;
   flex-direction: column;
 }
 .choice .answer {
@@ -1082,7 +1084,7 @@ footer a:hover {
     flex-direction: column;
     justify-content: space-between;
     margin: 0.5em !important;
-    padding: 3em 1em 6em 1em !important;
+    padding: 3em 1em 6vw 1em !important;
   }
   .answer p {
     font-size: clamp(0.6rem, 2vw, 1rem);
@@ -1365,6 +1367,10 @@ footer a:hover {
   .nav-logo {
     width: 200px;
     height: 80px;
+  }
+
+  .answer {
+    min-height: 350px;
   }
 
   .options {
