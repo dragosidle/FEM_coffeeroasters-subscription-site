@@ -679,7 +679,7 @@ nav img {
 .choice .answers {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 200ms ease-out;
+  transition: max-height 500ms ease-out;
   user-select: none;
   margin: 0 0 5em 0;
   display: none;
@@ -888,13 +888,14 @@ footer a:hover {
   font-size: 1.5rem;
   line-height: 1.6;
 }
-.order-preview .custom {
-  color: #0e8684;
+
+.custom {
+  color: #0e8684 !important;
   transition: 100ms color;
 }
-.order-preview .custom:hover {
+.custom:hover {
   cursor: pointer;
-  color: #0f9693;
+  color: #0f9693 !important;
 }
 
 .variation {
@@ -931,14 +932,6 @@ footer a:hover {
   font-size: clamp(0.8rem, 5vw, 1rem);
   line-height: 1.6;
   margin: clamp(1.4em, 4vw, 2em);
-}
-.modal__preview span {
-  color: #0e8684;
-  transition: 100ms color;
-}
-.modal__preview span:hover {
-  cursor: pointer;
-  color: #0f9693;
 }
 .modal p {
   margin: 0 2em;
