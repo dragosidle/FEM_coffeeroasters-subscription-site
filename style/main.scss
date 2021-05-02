@@ -37,6 +37,7 @@ body {
   backdrop-filter: blur(3px);
   z-index: 5;
   user-select: none;
+  transition: opacity 300ms;
 }
 
 @import './partials/navbar';
@@ -811,6 +812,7 @@ footer {
   border-radius: 0.8em;
   background-color: #fefcf7;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  transition: opacity 400ms;
   &__title {
     border-radius: 0.8em 0.8em 0 0;
     background-color: #2f3844;
