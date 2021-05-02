@@ -103,7 +103,10 @@ body {
     font-size: 1rem;
     background-color: hsl(179, 81%, 29%);
     transition: 100ms background-color;
+    transition: transform 100ms;
     &:hover {
+      transform: scale(1.1, 1.1);
+      transition: transform 100ms;
       cursor: pointer;
       background-color: #66d2cf;
     }
@@ -618,7 +621,6 @@ body {
 
 .disabled {
   background-color: #e2dedb !important;
-  cursor: auto !important;
   pointer-events: none;
 }
 
@@ -762,7 +764,10 @@ footer {
     font-size: 1rem;
     background-color: hsl(179, 81%, 29%);
     transition: 100ms background-color;
+    transition: transform 500ms;
     &:hover {
+      transform: scale(1.1, 1.1);
+      transition: transform 100ms;
       cursor: pointer;
       background-color: #66d2cf;
     }
@@ -862,8 +867,11 @@ footer {
     border: none;
     font-size: 1rem;
     background-color: hsl(179, 81%, 29%);
-    transition: 100ms background-color;
+    transition: background-color 100ms;
+    transition: transform 100ms;
     &:hover {
+      transform: scale(1.1, 1.1);
+      transition: transform 100ms;
       cursor: pointer;
       background-color: #66d2cf;
     }
@@ -911,6 +919,9 @@ footer {
   .nav-logo {
     width: 200px;
     height: 50px;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .choice {
@@ -1617,6 +1628,7 @@ footer {
     cursor: pointer;
     display: flex;
     margin: 1.2em 0;
+    transition: transform 400ms ease-in-out;
     h3 {
       color: #cdcecd;
       font-size: 1.5rem;
@@ -1629,6 +1641,8 @@ footer {
       font-family: 'Fraunces', sans-serif;
     }
     &:hover {
+      transform: translateX(0.5em);
+      transition: transform 200ms ease-in-out;
       h3 {
         color: #b4b6b8;
       }

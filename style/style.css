@@ -243,8 +243,11 @@ nav img {
   font-size: 1rem;
   background-color: #0e8684;
   transition: 100ms background-color;
+  transition: transform 100ms;
 }
 .card button:hover {
+  transform: scale(1.1, 1.1);
+  transition: transform 100ms;
   cursor: pointer;
   background-color: #66d2cf;
 }
@@ -722,7 +725,6 @@ nav img {
 
 .disabled {
   background-color: #e2dedb !important;
-  cursor: auto !important;
   pointer-events: none;
 }
 
@@ -867,8 +869,11 @@ footer a:hover {
   font-size: 1rem;
   background-color: #0e8684;
   transition: 100ms background-color;
+  transition: transform 500ms;
 }
 .order-overview button:hover {
+  transform: scale(1.1, 1.1);
+  transition: transform 100ms;
   cursor: pointer;
   background-color: #66d2cf;
 }
@@ -957,9 +962,12 @@ footer a:hover {
   border: none;
   font-size: 1rem;
   background-color: #0e8684;
-  transition: 100ms background-color;
+  transition: background-color 100ms;
+  transition: transform 100ms;
 }
 .modal button:hover {
+  transform: scale(1.1, 1.1);
+  transition: transform 100ms;
   cursor: pointer;
   background-color: #66d2cf;
 }
@@ -1003,6 +1011,9 @@ footer a:hover {
   .nav-logo {
     width: 200px;
     height: 50px;
+  }
+  .nav-logo:hover {
+    cursor: pointer;
   }
 
   .choice {
@@ -1674,6 +1685,7 @@ footer a:hover {
     cursor: pointer;
     display: flex;
     margin: 1.2em 0;
+    transition: transform 400ms ease-in-out;
   }
   .question-map h3 {
     color: #cdcecd;
@@ -1685,6 +1697,10 @@ footer a:hover {
     color: #adb0b2;
     font-size: 1.5rem;
     font-family: "Fraunces", sans-serif;
+  }
+  .question-map:hover {
+    transform: translateX(0.5em);
+    transition: transform 200ms ease-in-out;
   }
   .question-map:hover h3 {
     color: #b4b6b8;
