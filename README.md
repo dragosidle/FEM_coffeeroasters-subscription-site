@@ -64,6 +64,33 @@ Cool and easy way to get all the benefits of SVG while only making one http requ
 </div>
 ```
 
+Using em, rem, and vw with 'clamp'. These units save you from the 'media queries hell'!
+Paddings, margins and border radiuses dynamically update while maintaining good proportions. No longer the need to rewrite them for each media query.
+
+```scss
+.illustration {
+  width: clamp(30px, 15vh, 100px);
+}
+
+button {
+  user-select: none;
+  display: flex;
+  color: #fefcf7;
+  padding: 1em 2em;
+  border-radius: 0.5rem;
+  font-family: 'Fraunces', sans-serif;
+  margin: 3em auto 1em auto;
+  border: none;
+  font-size: 1rem;
+  background-color: hsl(179, 81%, 29%);
+  transition: 100ms background-color;
+  &:hover {
+    cursor: pointer;
+    background-color: #66d2cf;
+  }
+}
+```
+
 ### Continued development
 
 In the future I will only write my css from mobile to desktop. Doing this I will end up with a more fluid development, less unexpected behaviors and a way cleaner stylesheet. I have to work more on the JS logic that happens behind the scenes. In this one a lot of the 'magic' is based on the DOM, so if you inspect element the price of one card on the plan page and change it to any number you will affect the checkout generated price. I will completely separate the javascript logic from the visual stuff on the next challenges. One aspect that I have avoided in my learning journey was transitions. The arrows in the plan page are not rotating naturally, because of this I found myself wasting a lot of time trying to get them to work, they only rotate beautifully when clicking on the left side choices map on desktop view. Weird.
