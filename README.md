@@ -18,7 +18,7 @@ This is a solution to the [Coffeeroasters subscription site challenge on Fronten
 
 ## Overview
 
-This challenge took me exactely 8 days, with 4-5 hours of work daily. I added a few small details such as an overlay behind the modal on the plan page when checking out, some additional styling on the left side map to give a better feedback on the completion progess aswell as some extra effects of my taste. I used a mobile-first approach and imported all the SVG's through a Sprite, a thing I wish a knew about longer before.
+This challenge took me exactely 8 days, with 4-5 hours of work daily. I added a few small details such as an overlay behind the modal on the plan page when checking out, some additional styling on the left side map to give a better feedback on the completion progess aswell as some extra effects. I used a mobile-first approach and imported all the SVG's through a sprite, a thing I wish I knew about longer before.
 
 ### The challenge
 
@@ -67,7 +67,7 @@ Cool and easy way to get all the benefits of SVG while only making one http requ
 ### Continued development
 
 In the future I will only write my css from mobile to desktop. Doing this I will end up with a more fluid development, less unexpected behaviors and a way cleaner stylesheet. I have to work more on the JS logic that happens behind the scenes. In this one a lot of the 'magic' is based on the DOM, so if you inspect element the price of one card on the plan page and change it to any number you will affect the checkout generated price. I will completely separate the javascript logic from the visual stuff on the next challenges. One aspect that I have avoided in my learning journey was transitions. The arrows in the plan page are not rotating naturally, because of this I found myself wasting a lot of time trying to get them to work, they only rotate beautifully when clicking on the left side choices map on desktop view. Weird.
-I'm looking forward to ways of accelerating my workflow and to get a better grip of transitions, otherwise I'm pleased with how it ended up.
+I'm looking forward learn new ways of accelerating my workflow and get a better grip of transitions.
 
 ### Useful resources
 
