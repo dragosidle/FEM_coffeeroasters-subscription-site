@@ -18,7 +18,7 @@ This is a solution to the [Coffeeroasters subscription site challenge on Fronten
 
 ## Overview
 
-This challenge took me exactely 8 days, with 4-5 hours of work daily. I added a few small details such as an overlay behind the modal on the plan page when checking out, some additional styling on the left side map to give a better feedback on the completion progess aswell as some extra effects. I used a mobile-first approach and imported all the SVG's through a sprite, a thing I wish I knew about longer before.
+This challenge took me exactely 8 days, with 4-5 hours of work daily. I added a few small details such as an overlay behind the modal on the plan page when checking out, sticky position and additional styling on the left side content map to give a better feedback on the completion progess. I used a mobile-first approach and imported all the SVG's through a sprite, a thing I wish I knew about longer before.
 
 ### The challenge
 
