@@ -81,9 +81,9 @@ let deliveries = false;
 let capsuleCheck = false;
 
 const checkPlan = function () {
-  console.log(
-    `capsule:${capsuleCheck}, preferences: ${preferences}, bean:${bean}, quantity: ${quantity}, grind:${grind}, deliveries:${deliveries}`
-  );
+  // console.log(
+  //   `capsule:${capsuleCheck}, preferences: ${preferences}, bean:${bean}, quantity: ${quantity}, grind:${grind}, deliveries:${deliveries}`
+  // );
   if (capsuleCheck && bean && quantity && deliveries) {
     document.getElementById('confirm').classList.remove('disabled');
   } else if (preferences && bean && quantity && grind && deliveries) {
