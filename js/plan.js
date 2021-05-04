@@ -81,6 +81,9 @@ let deliveries = false;
 let capsuleCheck = false;
 
 const checkPlan = function () {
+  console.log(
+    `capsule:${capsuleCheck}, preferences: ${preferences}, bean:${bean}, quantity: ${quantity}, grind:${grind}, deliveries:${deliveries}`
+  );
   if (capsuleCheck && bean && quantity && deliveries) {
     document.getElementById('confirm').classList.remove('disabled');
   } else if (preferences && bean && quantity && grind && deliveries) {
@@ -203,9 +206,11 @@ capsule.addEventListener('click', () => {
 });
 
 filter.addEventListener('click', () => {
-  capsuleCheck = false;
+  if (capsuleCheck) {
+    capsuleCheck = false;
+    grind = false;
+  }
   preferences = true;
-  grind = false;
   checkPlan();
   document.getElementById('grind').classList.remove('variation');
   document.getElementById('capsule-variation').classList.remove('variation');
@@ -221,9 +226,11 @@ filter.addEventListener('click', () => {
 });
 
 espresso.addEventListener('click', () => {
+  if (capsuleCheck) {
+    capsuleCheck = false;
+    grind = false;
+  }
   preferences = true;
-  capsuleCheck = false;
-  grind = false;
   checkPlan();
   document.getElementById('grind').classList.remove('variation');
   document.getElementById('using-capsule').classList.add('variation');
