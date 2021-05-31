@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./coffee_screenshot.gif)
+![](./preview.gif)
 
 ### Links
 
